@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>照片集</title>
+  
+  <subtitle>Take Photo Think Seriously</subtitle>
+  <link href="https://rivers-wqj.github.io/RiGallery/atom.xml" rel="self"/>
+  
+  <link href="https://rivers-wqj.github.io/RiGallery/"/>
+  <updated>2023-08-21T16:16:16.865Z</updated>
+  <id>https://rivers-wqj.github.io/RiGallery/</id>
+  
+  <author>
+    <name>WQJ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>照片集</title>
+    <link href="https://rivers-wqj.github.io/RiGallery/2023/undefined/"/>
+    <id>https://rivers-wqj.github.io/RiGallery/2023/undefined/</id>
+    <published>2023-08-21T16:16:16.865Z</published>
+    <updated>2023-08-21T16:16:16.865Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
