@@ -1,0 +1,18 @@
+title: 照片集
+subtitle: Take Photo Think Seriously
+description: 拿起相机，认真思考
+cover: 'https://raw.githubusercontent.com/rivers-wqj/RiGallery/main/PKCity/IMG_4346.2mgyoj22lho0.webp'
+author: WQJ
+
+footer_logo: 
+  use: self
+  self:
+    link: 'https://rivers-wqj.github.io/'
+    src: 'https://github.com/lfkdsk/picx-images-hosting/raw/master/20230817/tripper2white.2pbuwaqvndu0.webp'
+
+url: https://rivers-wqj.github.io/RiGallery
+root: /RiGallery
+
+photography_page:
+  slogan: true
+  slogan_descr: 'The moments when I pressed the shutter, the moments are forever.'
