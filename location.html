@@ -236,153 +236,160 @@
   }
 </style>
   <!-- Main Content -->
-  <section class="pjax-area">  
-    <div class="content-area album-area">
-      
+  <section class="pjax-area">
+  <div class="content-area album-area">
+    
       <div class="container gpro-slogan title">
         
-          The moments when I pressed the shutter, the moments are forever.
-        
+              The moments when I pressed the shutter, the moments are forever.
+                
       </div>
       
-    </div>
-    <div class="container map-container">
-        <div id="map"></div>
-    </div>
+  </div>
+  <div class="container map-container">
+    <div id="map"></div>
+  </div>
 
-    <script>
-      $(function() {
-        $("div.lazy").lazyload();
-      });
-    </script>
-    <style>
-      body {
-        background-color: #fff;
-      }
-  
-      #map { 
-        min-height: 900px;
-        max-height: 1600px; 
-        max-width: 1400px;
-        margin: 0 auto;
-      }
+  <script>
+    $(function () {
+      $("div.lazy").lazyload();
+    });
+  </script>
+  <style>
+    body {
+      background-color: #fff;
+    }
 
-      .map-container {
-        margin-top: 120px;
-      }
+    #map {
+      height: 70vh;
+      width: 70vw;
+      margin: 0 auto;
+    }
 
-      .album-area {
-        margin-top: 120px;
-        padding-left: 16px;
-        padding-right: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    @media (prefers-color-scheme: dark) {
+
+      .leaflet-layer,
+      .leaflet-control-zoom-in,
+      .leaflet-control-zoom-out,
+      .leaflet-control-attribution {
+        filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
       }
-  
-      .gpro-slogan {
-        text-align: center;
-        font-size: 36px;
-        font-weight: 700;
-        color: #3D4350;
-      }
-  
-      .gpro-container {
-        margin-top: 120px;
-        gap: 12px;
-      }
-  
-      .gpro-tile {
-        aspect-ratio: 3 / 2;
-        background-position: center;
-        background-size: cover;
-        transition: all .15s ease-in-out;
-        min-height: 211px;
-      }
-  
-      .gpro-tile:hover {
-        box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
-        transition: all .15s ease-in-out;
-      }
-  
+    }
+
+    .map-container {
+      margin-top: 120px;
+    }
+
+    .album-area {
+      margin-top: 120px;
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gpro-slogan {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #3D4350;
+    }
+
+    .gpro-container {
+      margin-top: 120px;
+      gap: 12px;
+    }
+
+    .gpro-tile {
+      aspect-ratio: 3 / 2;
+      background-position: center;
+      background-size: cover;
+      transition: all .15s ease-in-out;
+      min-height: 211px;
+    }
+
+    .gpro-tile:hover {
+      box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+      transition: all .15s ease-in-out;
+    }
+
+    .gpro-tile-descr {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      align-items: center;
+      text-overflow: clip;
+      flex-direction: column;
+      transition: all .15s ease-in-out;
+      padding-bottom: .85em;
+      opacity: 0;
+      background-color: rgb(9, 9, 11);
+    }
+
+    .gpro-tile-descr:hover {
+      opacity: 0.8;
+      transition: all .15s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
       .gpro-tile-descr {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-        font-size: 14px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        align-items: center;
-        text-overflow: clip;
-        flex-direction: column;
-        transition: all .15s ease-in-out;
-        padding-bottom: .85em;
-        opacity: 0;
-        background-color: rgb(9, 9, 11);
+        opacity: 0.6;
       }
-  
-      .gpro-tile-descr:hover {
-        opacity: 0.8;
-        transition: all .15s ease-in-out;
+
+      .gpro-slogan {
+        font-size: 28px;
       }
-  
-      @media (max-width: 768px) {
-        .gpro-tile-descr {
-          opacity: 0.6;
-        }
-  
-        .gpro-slogan {
-          font-size: 28px;
-        }
-  
-        .content-area {
-          margin-top: 80px;
-        }
-  
-        .gpro-container {
-          margin-top: 60px;
-        }
+
+      .content-area {
+        margin-top: 80px;
       }
-    
-      .leaflet-popup-content {
-        min-width: 300px;
+
+      .gpro-container {
+        margin-top: 60px;
       }
-    </style>
-    <script type="text/javascript">
-        var album_data = JSON.parse(`{"T109火车摄影":{"url":"CR-T109","date":"2023-01-11T00:00:00.000Z","cover":"CR-T109/20230111T109-8.JPG"},"T145火车摄影":{"url":"CR-T145","date":"2023-04-28T00:00:00.000Z","cover":"CR-T145/20230428T145-1.JPG"},"北京街头摄影":{"url":"Peking-ST","date":"2020-2023","cover":"Peking-ST/20230630guomei.jpg"},"北大校园":{"url":"Peking-Campus","date":"2023-03-26T00:00:00.000Z","cover":"Peking-Campus/R0002987.299hazb9cy4g.webp"},"北京风光":{"url":"Peking-City","date":"2022-10-01T00:00:00.000Z","cover":"Peking-City/IMG_4317.5l08gas8f6k0.webp"}}`);
-        var keys = Object.keys(album_data)
-        var map = L.map('map');
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a target="_blank" rel="noopener" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-        var first = null;
-        for (const key of keys) {
-          console.log(key)
-          var v = album_data[key];
-          var file = v.cover;
-          var cover = 'https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/' + file.substr(0, file.lastIndexOf(".")) + ".webp"
-          console.log(v)
-          if (v.hasOwnProperty('location')) {
-            // set center view.
-            if (first === null) {
-              first = v.location;
-            }
-            // add marker
-            var marker = L.marker(v.location).addTo(map);
-            marker.bindPopup(`<a href="/RiGallery//${v.url}">${key}</a>` + `<img src=${cover} style="margin-top:4px; max-width:300px" />`)
-                  .openPopup();
-          }
+    }
+
+    .leaflet-popup-content {
+      min-width: 300px;
+    }
+  </style>
+  <script type="text/javascript">
+    var album_data = JSON.parse(`{"T109火车摄影":{"url":"CR-T109","date":"2023-01-11T00:00:00.000Z","cover":"CR-T109/20230111T109-8.JPG"},"T145火车摄影":{"url":"CR-T145","date":"2023-04-28T00:00:00.000Z","cover":"CR-T145/20230428T145-1.JPG"},"北京街头摄影":{"url":"Peking-ST","date":"2020-2023","cover":"Peking-ST/20230630guomei.jpg"},"北大校园":{"url":"Peking-Campus","date":"2023-03-26T00:00:00.000Z","cover":"Peking-Campus/R0002987.299hazb9cy4g.webp"},"北京风光":{"url":"Peking-City","date":"2022-10-01T00:00:00.000Z","cover":"Peking-City/IMG_4317.5l08gas8f6k0.webp"}}`);
+    var keys = Object.keys(album_data)
+    var map = L.map('map');
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a target="_blank" rel="noopener" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var first = null;
+    for (const key of keys) {
+      console.log(key)
+      var v = album_data[key];
+      var file = v.cover;
+      var cover = 'https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/' + file.substr(0, file.lastIndexOf(".")) + ".webp"
+      console.log(v)
+      if (v.hasOwnProperty('location')) {
+        // set center view.
+        if (first === null) {
+          first = v.location;
         }
-        map.setView(first, 10);
-    </script>
-  </section>
-  
-  
+        // add marker
+        var marker = L.marker(v.location).addTo(map);
+        marker.bindPopup(`<a href="/RiGallery//${v.url}">${key}</a>` + `<img src=${cover} style="margin-top:4px; max-width:300px" />`)
+          .openPopup();
+      }
+    }
+    map.setView(first, 10);
+  </script>
+</section>
   <!-- Footer -->
   <!-- Footer -->
 <footer class="itp-footer text-center">
