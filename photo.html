@@ -22,7 +22,7 @@
   <meta name="author" content="WQJ">
   
   <!--Open Graph Title-->
-  <meta property="og:title" content="主题设置" />
+  <meta property="og:title" content="Photo" />
   <!--Open Graph Description-->
   <meta property="og:description" content="拿起相机，认真思考" />
   <!--Open Graph Site Name-->
@@ -38,7 +38,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- Title -->
   
-  <title>主题设置 - 照片集</title>
+  <title>Photo - 照片集</title>
   <!-- 添加到主屏后的标题（iOS 6 新增） -->
   <meta name="apple-mobile-web-app-title" content="照片集">
   <!-- 是否启用 WebApp 全屏模式 -->
@@ -217,7 +217,7 @@
         </div>
       </a>
     </div>
-    <ol class="itp-layer-toc"><li class="itp-layer-toc-item itp-layer-toc-level-1"><a class="itp-layer-toc-link" href="#%E4%B8%BB%E9%A2%98%E8%AE%BE%E5%AE%9A"><span class="itp-layer-toc-text">主题设定</span></a><ol class="itp-layer-toc-child"><li class="itp-layer-toc-item itp-layer-toc-level-2"><a class="itp-layer-toc-link" href="#%E8%AE%BE%E7%BD%AE%E3%80%8C%E5%9B%BE%E6%A0%87%E3%80%8D"><span class="itp-layer-toc-text">设置「图标」</span></a></li><li class="itp-layer-toc-item itp-layer-toc-level-2"><a class="itp-layer-toc-link" href="#%E8%AE%BE%E7%BD%AE%E3%80%8C%E6%A0%B7%E5%BC%8F%E3%80%8D"><span class="itp-layer-toc-text">设置「样式」</span></a></li></ol></li></ol>
+    
   </div>
   <div class="itp-float-layer-bg layer-bg-nodisplay" id="close_layer"></div>
 </div>
@@ -231,131 +231,232 @@
   }
 </style>
   <!-- Main Content -->
-  
-
-<section class="pjax-area">
-  <div class="content-area post-content-area">
-    <div class=" left-area"></div>
-    <div class="main-area">
-      <div class="itp-m3-card post-cover">
-        <div class="itp-m3-card-cover">
-          <div class="itp-m3-cover-bg" style="
-          background-image: url(https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp);
-          background-size: cover;
-          background-position: center center;
-        ">
-            <div class="itp-m3-card-cover-layer ">
-              <div class="info-area pjax-area">
-                <div class="itp-m3-cover-avatar">
-                  <img src="https://imgur.lzmun.com/picgo/after2022/tripper2colorfull.png_avatar" class="nofancy">
-                </div>
-                <div class="itp-m3-cover-title" style="opacity: 1;">
-                  主题设置
-                </div>
-                <div class="itp-m3-cover-subtitle" style="opacity: 0.8;">
-                  
-拿起相机，认真思考
-
-                </div>
-              </div>
-            </div>
-          </div>
+    <section class="pjax-area">
+    <div class="content-area post-album -content-area">
+      <div class="grid grid-cols-3 gap-2">
+        <div class="pic-area fullscreen-pic">
+          <div class="pic-item" />
+          <img id="imgbox" class="nofancy pic-box"/>
         </div>
-        <div class="article">
-          <h1 id="主题设定">主题设定</h1>
-<h2 id="设置「图标」">设置「图标」</h2>
-<pre><code class="language-yaml"># ---------------------------------------------------------------
-# ICON Settings 图标设置
-# ---------------------------------------------------------------
-
-favicon: 
-avatar: 
-apple_icon:
-  # iPhone 57x57 
-  iphone: 
-  # iPad 72x72
-  ipad: 
-  # Retina iPhone 114x114
-  iphone_hd: 
-  # Retina iPad 144x144
-  ipad_hd: 
-</code></pre>
-<p>编辑「主题配置文件」中的图标设置部分</p>
-<p><strong>favicon</strong>: 浏览器标签页的小图标<br>
-<strong>avatar</strong>: 首页、文章封面处的头像<br>
-<strong>apple_icon</strong>: 负责苹果不同尺寸设备上的图标</p>
-<h2 id="设置「样式」">设置「样式」</h2>
-<pre><code class="language-yaml"># ---------------------------------------------------------------
-# Style Settings 样式设置
-# ---------------------------------------------------------------
-
-# Schemes
-# Use column ｜ m3
-schemes: m3
-
-# Fonts
-# Use LXGW ｜ 
-fonts: LXGW
-
-
-# Random Pictures
-random_pic_switch: false
-random_pics: 19
-random_thumbnail: https://cdn.jsdelivr.net/gh/photup/hexo-theme-type-random_pics@v1.0.0/randompic-
-# random_thumbnail: ../img/random/randompic-
-</code></pre>
-<p><strong>schemes</strong>: Type 主题目前提供 column、m3 两种样式，可以根据您的喜好进行选择，将所选的样式名称填入 schemes 设置项即可。</p>
-<p><strong>fonts</strong>: Type 主题内置有霞鹜文楷字体，在 fonts 设置项填入 LXGW 即可启用全局霞鹜文楷字体。</p>
-<p>Type 主题提供文章随机封面图的功能，启用该功能后，没有设置 cover 项目的文章会在首页启用随机封面图，但是注意文章内页并不会启用。<br>
-随机封面图有两个来源，一是主题文件内置的本地文件，二是由 jsdelivr 提供的在线文件。您也可以自定义随机封面图。</p>
-<p><strong>random_pic_switch</strong>: 布尔值，开启或关闭随机封面图功能<br>
-<strong>random_pics</strong>: 随机封面图的数量<br>
-<strong>random_thumbnail</strong>: 随机封面图地址</p>
-
-        </div>
-        <div class="itp-m3-post-info_area">
-          <div class="info_area-category">
+        <p id="descbox" class="text-center text-xs hint-text"> </p>
+      </div>
+      <!-- <div class="album-info -info">
+        <div class="album-info-main">
+          <div class="album-title">Photo</div>
+          <span class="album-subtitle">
             
             
-          </div>
-          <div class="info_area-copyright">
-            <p>本文著作权归作者&nbspWQJ&nbsp所有，转载或引用请联系作者获得授权。</p>
-          </div>
+            
+              —— <br />
+              
+          </span>
+          <span class="album-subtitle">
+            
+          </span>
         </div>
-      </div>
-      
+        <div class="album-article article -article">
+          
+        </div>
+      </div> -->
     </div>
-    <div class="right-area">
-      
-      
-
-<div id="column-toc-m3" class="noprn column-toc-m3 itp-toc-m3-sidetop">
-  <ol class="itp-toc"><li class="itp-toc-item itp-toc-level-1"><a class="itp-toc-link" href="#%E4%B8%BB%E9%A2%98%E8%AE%BE%E5%AE%9A"><span class="itp-toc-text">主题设定</span></a><ol class="itp-toc-child"><li class="itp-toc-item itp-toc-level-2"><a class="itp-toc-link" href="#%E8%AE%BE%E7%BD%AE%E3%80%8C%E5%9B%BE%E6%A0%87%E3%80%8D"><span class="itp-toc-text">设置「图标」</span></a></li><li class="itp-toc-item itp-toc-level-2"><a class="itp-toc-link" href="#%E8%AE%BE%E7%BD%AE%E3%80%8C%E6%A0%B7%E5%BC%8F%E3%80%8D"><span class="itp-toc-text">设置「样式」</span></a></li></ol></li></ol>
-</div>
-
-      
-    </div>
-  </div>
+    <!--  -->
+        </div>
+        <script>
+          var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
+          var descBox = $("#descbox");
+          imgno = 0; // 进入页面时，设定初始的图片编号为0 // 定义新变量时不使用 var 则为全局变量、
+          function getParam(key) {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const id = urlParams.get(key)
+            console.log(id)
+            return id
+          }
+          function changeImageWith(imgLink) {
+            imageBox.src = imgLink; //替换图片
+            // var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
+            // imageFancy.setAttribute("href", imgLink);
+            // descBox.text(desc);
+            // updateParams(name);
+          }
+          const name = getParam('name');
+          var imgLink = 'https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main' + '/' + name;
+          changeImageWith(imgLink)
+        </script>
+        <style>
+          body {
+            background-color: #fff;
+          }
   
-  <!--
-<div class="mdui-dialog" id="shareDialogText" style="text-align: center;">
-  <div class="itp-share-card" id="shareInfo">
-    <div class="itp-share-cover" style="background: url('https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp');">
-      <div class="itp-share-layer">
-        <div class="itp-share-info">
-          <div class="itp-share-avatar">
-            <img src="https://imgur.lzmun.com/picgo/after2022/tripper2colorfull.png_avatar" class="nofancy">
-          </div>
-          <div class="itp-share-title">主题设置</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="mdui-dialog" id="shareDialogImg" style="text-align: center;">
-  分享图已生成
-</div>-->
-</section>
+          .album-comment {
+            max-width: 800px;
+            margin: 0 auto;
+          }
+  
+          .album-article {
+            font-size: 1.2rem;
+          }
+  
+          .hint-text {
+            color: black;
+            opacity: 60%;
+            padding-top: 4px;
+          }
+  
+          .pic-item {
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            transition: all .3s ease-in-out;
+            min-height: 200px;
+            aspect-ratio: 3 / 2;
+          }
+  
+          .pic-item > a {
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+          }
+  
+          .pic-box {
+            transition: all .3s ease-in-out;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin: 0 auto;
+          }
+  
+          .album-info {
+            flex-direction: column;
+            justify-content: space-between;
+            color: var(--main-black);
+          }
+  
+          .album-title {
+            font-size: 2em;
+          }
+  
+          .album-subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
+          }
+  
+  
+          .album-location {
+            display: inline-flex;
+            font-size: .8em;
+            color: #71afdd;
+            gap: 4px;
+            padding-bottom: 4px;
+          }
+  
+          .album-list {
+            padding-top: 6px;
+            overflow-x: scroll;
+          }
+  
+          .album-item {
+            background-color: black;
+            aspect-ratio: 1 / 1;
+            min-height: 100px;
+            min-width: 100px;
+            background-size: cover;
+            background-position: center;
+          }
+  
+          @media (max-width: 768px) {
+            .content-area {
+              max-width: 100vw;
+            }
+  
+            .pic-area {
+              grid-column: span 3 / span 3;
+              padding: 16px;
+            }
+  
+            .album-info {
+              grid-column: span 3 / span 3;
+              padding: 12px;
+            }
+  
+            .album-article {
+              padding: 2px;
+            }
+  
+            .album-title {
+              font-size: 1.5em;
+            }
+          }
+  
+          @media (min-width: 769px) {
+            .content-area {
+              max-width: 92%;
+              margin: 0 auto;
+              padding: 135px 16px 16px 16px;
+            }
+  
+            .album-article {
+              margin-top: 2px;
+            }
+  
+            .default-article {
+              max-height: 500px;
+              overflow-y: scroll;
+            }
+  
+            .pic-area {
+              grid-column: span 2 / span 2;
+            }
+  
+            .album-info {
+              grid-column: span 1 / span 1;
+              margin-left: 12px;
+            }
+          }
+  
+          @media (min-width: 1304px) {
+            .content-area {
+              max-width: 1400px;
+            }
+  
+            .fullscreen-content-area {
+              max-width: 100vh;
+            }
+          }
+  
+          @media (prefers-color-scheme: dark) {
+            .album-info {
+              color: #fff;
+            }
+  
+            .album-location {
+              color: #bdbdbd;
+            }
+  
+            .hint-text {
+              color: white;
+              opacity: 80%;
+            }
+  
+            .pic-item {
+              background-color: grey;
+            }
+  
+            .album-item {
+              background-color: grey;
+            }
+          }
+  
+          .fullscreen-pic {
+            grid-column: span 3 / span 3;
+          }
+  
+          .fullscreen-info {
+            grid-column: span 3 / span 3;
+          }
+        </style>
+  </section>
   <!-- Footer -->
   <!-- Footer -->
 <footer class="itp-footer text-center">

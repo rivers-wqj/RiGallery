@@ -132,6 +132,8 @@
   
   <script src="/RiGallery/js/jquery.min.js"></script>
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
   <!--Comment-->
   
   <!--Vercel Audiences Analytics-->
@@ -229,7 +231,96 @@
   }
 </style>
   <!-- Main Content -->
-  <section class="pjax-area">
+  
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230420haidian.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423haidian.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba1.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba2.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230517panjiayuan.JPG" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230520houhai1.JPG" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum1.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230523beiwucun.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230525zgc.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230527panjiayuan.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230601dior.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609haidian.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609xiangshan.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230613wukesong.JPG" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230625yuetanpark.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu1.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu2.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu3.JPG" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu.jpg" as="image" />  
+
+  
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
+
+<section class="pjax-area">
   <div class="content-area post-album default-content-area">
     <div class="grid grid-cols-3 gap-2">
       <div class="pic-area default-pic">
@@ -244,11 +335,14 @@
           
           
           
+          
           <a class="album-item lazy" id="0"
             name="20230420haidian" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230420haidian.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400  "
+            share="Peking-ST/20230420haidian.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230420haidian.webp"
             aria-label="the photo 0"></a>
+          
           
           
           
@@ -258,8 +352,10 @@
           <a class="album-item lazy" id="1"
             name="20230423haidian" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423haidian.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000  "
+            share="Peking-ST/20230423haidian.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230423haidian.webp"
             aria-label="the photo 1"></a>
+          
           
           
           
@@ -269,8 +365,10 @@
           <a class="album-item lazy" id="2"
             name="20230423qijiuba1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba1.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1600  "
+            share="Peking-ST/20230423qijiuba1.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230423qijiuba1.webp"
             aria-label="the photo 2"></a>
+          
           
           
           
@@ -280,8 +378,10 @@
           <a class="album-item lazy" id="3"
             name="20230423qijiuba2" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba2.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320  "
+            share="Peking-ST/20230423qijiuba2.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230423qijiuba2.webp"
             aria-label="the photo 3"></a>
+          
           
           
           
@@ -291,8 +391,10 @@
           <a class="album-item lazy" id="4"
             name="20230517panjiayuan" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230517panjiayuan.JPG"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400  "
+            share="Peking-ST/20230517panjiayuan.JPG"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230517panjiayuan.webp"
             aria-label="the photo 4"></a>
+          
           
           
           
@@ -302,8 +404,10 @@
           <a class="album-item lazy" id="5"
             name="20230520houhai1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230520houhai1.JPG"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F4 ISO6400  "
+            share="Peking-ST/20230520houhai1.JPG"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230520houhai1.webp"
             aria-label="the photo 5"></a>
+          
           
           
           
@@ -313,8 +417,10 @@
           <a class="album-item lazy" id="6"
             name="20230522zgcforum1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum1.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F63/10 ISO800  "
+            share="Peking-ST/20230522zgcforum1.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230522zgcforum1.webp"
             aria-label="the photo 6"></a>
+          
           
           
           
@@ -324,8 +430,10 @@
           <a class="album-item lazy" id="7"
             name="20230522zgcforum" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800  "
+            share="Peking-ST/20230522zgcforum.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230522zgcforum.webp"
             aria-label="the photo 7"></a>
+          
           
           
           
@@ -335,8 +443,10 @@
           <a class="album-item lazy" id="8"
             name="20230523beiwucun" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230523beiwucun.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F28/5 ISO200  "
+            share="Peking-ST/20230523beiwucun.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230523beiwucun.webp"
             aria-label="the photo 8"></a>
+          
           
           
           
@@ -346,8 +456,10 @@
           <a class="album-item lazy" id="9"
             name="20230525zgc" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230525zgc.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F8 ISO200  "
+            share="Peking-ST/20230525zgc.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230525zgc.webp"
             aria-label="the photo 9"></a>
+          
           
           
           
@@ -357,8 +469,10 @@
           <a class="album-item lazy" id="10"
             name="20230527panjiayuan" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230527panjiayuan.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200  "
+            share="Peking-ST/20230527panjiayuan.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230527panjiayuan.webp"
             aria-label="the photo 10"></a>
+          
           
           
           
@@ -368,8 +482,10 @@
           <a class="album-item lazy" id="11"
             name="20230601dior" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230601dior.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400  "
+            share="Peking-ST/20230601dior.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230601dior.webp"
             aria-label="the photo 11"></a>
+          
           
           
           
@@ -379,8 +495,10 @@
           <a class="album-item lazy" id="12"
             name="20230609haidian" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609haidian.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F7/2 ISO200  "
+            share="Peking-ST/20230609haidian.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230609haidian.webp"
             aria-label="the photo 12"></a>
+          
           
           
           
@@ -390,8 +508,10 @@
           <a class="album-item lazy" id="13"
             name="20230609xiangshan" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609xiangshan.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640  "
+            share="Peking-ST/20230609xiangshan.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230609xiangshan.webp"
             aria-label="the photo 13"></a>
+          
           
           
           
@@ -401,8 +521,10 @@
           <a class="album-item lazy" id="14"
             name="20230613wukesong" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230613wukesong.JPG"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F16/5 ISO200  "
+            share="Peking-ST/20230613wukesong.JPG"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230613wukesong.webp"
             aria-label="the photo 14"></a>
+          
           
           
           
@@ -412,8 +534,10 @@
           <a class="album-item lazy" id="15"
             name="20230625yuetanpark" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230625yuetanpark.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200  "
+            share="Peking-ST/20230625yuetanpark.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230625yuetanpark.webp"
             aria-label="the photo 15"></a>
+          
           
           
           
@@ -423,8 +547,10 @@
           <a class="album-item lazy" id="16"
             name="20230628" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200  "
+            share="Peking-ST/20230628.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628.webp"
             aria-label="the photo 16"></a>
+          
           
           
           
@@ -434,8 +560,10 @@
           <a class="album-item lazy" id="17"
             name="20230628shuangxiu1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu1.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400  "
+            share="Peking-ST/20230628shuangxiu1.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu1.webp"
             aria-label="the photo 17"></a>
+          
           
           
           
@@ -445,8 +573,10 @@
           <a class="album-item lazy" id="18"
             name="20230628shuangxiu2" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu2.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250  "
+            share="Peking-ST/20230628shuangxiu2.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu2.webp"
             aria-label="the photo 18"></a>
+          
           
           
           
@@ -456,8 +586,10 @@
           <a class="album-item lazy" id="19"
             name="20230628shuangxiu3" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu3.JPG"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640  "
+            share="Peking-ST/20230628shuangxiu3.JPG"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu3.webp"
             aria-label="the photo 19"></a>
+          
           
           
           
@@ -467,8 +599,10 @@
           <a class="album-item lazy" id="20"
             name="20230628shuangxiu" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320  "
+            share="Peking-ST/20230628shuangxiu.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu.webp"
             aria-label="the photo 20"></a>
+          
           
           
           
@@ -478,6 +612,7 @@
           <a class="album-item lazy" id="21"
             name="20230630guomei" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg"
             desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2500  "
+            share="Peking-ST/20230630guomei.jpg"
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230630guomei.webp"
             aria-label="the photo 21"></a>
           
@@ -488,13 +623,16 @@
       <div class="album-info-main">
         <div class="album-info-btm">
           
+          <div class="album-share album-tool">
+            <iconpark-icon name="aiming"></iconpark-icon><a id="share" href="javascript:void(0)"> Share Link. </a>
+          </div>
         </div>        
         <div class="album-title">北京街头摄影</div>
         <span class="album-subtitle">
           
           
           
-            —— 2023-10-24<br />
+            —— 2023-10-25<br />
           
         </span>
         <span class="album-subtitle">
@@ -507,73 +645,6 @@
     </div>
   </div>
   
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-  
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-    
       </div>
       <script>
         var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
@@ -603,6 +674,7 @@
           var name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
           imageBox.src = imgLink; //替换图片
+          imageBox.setAttribute("share", target.getAttribute('share'));
           var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
           imageFancy.setAttribute("href", imgLink);
           var fancyBoxImage = document.getElementsByClassName("fancybox__image")[0];
@@ -627,6 +699,9 @@
         const len = +'22'
         if (name !== "" && name !== null) {
           changeImageWithName(name)
+        } else {
+          var value = $(`#0`)[0];
+          imageBox.setAttribute("share", value.getAttribute('share'));
         }
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
@@ -653,7 +728,36 @@
             imgno = 0;
             cheangeImageInSelector();
           };
+        };
+        function copyToClipboard(content) {
+          toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
+          if (window.isSecureContext && navigator.clipboard) {
+            navigator.clipboard.writeText(content);
+            toastr.success('Copy single url into Clipboard.');
+          } else {
+            toastr.info('Please check your clipboard write permission.')
+          }
         }
+        $("#share").on('click', function() {
+          var imageBox = document.getElementById("imgbox"); 
+          copyToClipboard('https://rivers-wqj.github.io/RiGallery/' + "photo?name=" + imageBox.getAttribute('share'));
+        });
       </script>
       <style>
         body {
@@ -715,7 +819,7 @@
         }
 
 
-        .album-location {
+        .album-tool {
           display: inline-flex;
           font-size: .8em;
           color: #71afdd;
@@ -729,6 +833,7 @@
         }
 
         .album-item {
+          background-color: black;
           aspect-ratio: 1 / 1;
           min-height: 100px;
           min-width: 100px;
@@ -801,13 +906,21 @@
             color: #fff;
           }
 
-          .album-location {
+          .album-tool {
             color: #bdbdbd;
           }
 
           .hint-text {
             color: white;
             opacity: 80%;
+          }
+
+          .pic-item {
+            background-color: grey;
+          }
+
+          .album-item {
+            background-color: grey;
           }
         }
 
