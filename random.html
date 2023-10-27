@@ -232,212 +232,265 @@
 </style>
   <!-- Main Content -->
   <section class="pjax-area">
-    <div class="content-area post-album content-area">
-      <div class="grid grid-cols-3 gap-2">
-        <div class="pic-area fullscreen-pic">
-          <div class="pic-item" />
-          <img id="imgbox" class="nofancy pic-box"/>
+    <div class="content-area post-album fullscreen-content-area">
+        <div class="grid grid-cols-3 gap-2">
+            <div class="pic-area fullscreen-pic">
+                <div class="pic-item" />
+                <img id="imgbox" class="pic-box" />
+            </div>
+            <p id="descbox" class="text-center text-xs hint-text"> </p>
         </div>
-        <p id="descbox" class="text-center text-xs hint-text"> </p>
-      </div>
-      <div class="album-info fullscreen-info">
-        <div class="album-info-main">
-      </div>
+        <div class="album-info fullscreen-info">
+            <button id="nextbox" class="album-next-one">NEXT ONE</button>
+            <div class="album-info-main">
+            </div>
+        </div>
     </div>
     <!--  -->
-        </div>
-        <script>
-          var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
-          var descBox = $("#descbox");
-          const all = JSON.parse(`{"CR-T109/20230111T10-9.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2000 ","location":[],"name":"20230111T10-9","path":"CR-T109/20230111T10-9.jpg"},"CR-T109/20230111T109-10.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","location":[],"name":"20230111T109-10","path":"CR-T109/20230111T109-10.jpg"},"CR-T109/20230111T109-2.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","location":[],"name":"20230111T109-2","path":"CR-T109/20230111T109-2.JPG"},"CR-T109/20230111T109-3.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","location":[],"name":"20230111T109-3","path":"CR-T109/20230111T109-3.JPG"},"CR-T109/20230111T109-4.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","location":[],"name":"20230111T109-4","path":"CR-T109/20230111T109-4.JPG"},"CR-T109/20230111T109-5.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","location":[],"name":"20230111T109-5","path":"CR-T109/20230111T109-5.JPG"},"CR-T109/20230111T109-6.2mdwso60l5e0.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230111T109-6.2mdwso60l5e0","path":"CR-T109/20230111T109-6.2mdwso60l5e0.jpg"},"CR-T109/20230111T109-7.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230111T109-7","path":"CR-T109/20230111T109-7.jpg"},"CR-T109/20230111T109-8.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230111T109-8","path":"CR-T109/20230111T109-8.JPG"},"CR-T109/2023011T109-1.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"2023011T109-1","path":"CR-T109/2023011T109-1.JPG"},"CR-T145/20230428T145-1.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230428T145-1","path":"CR-T145/20230428T145-1.JPG"},"CR-T145/20230428T145-2.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO4000 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO4000 ","location":[],"name":"20230428T145-2","path":"CR-T145/20230428T145-2.JPG"},"CR-T145/20230428T145-3.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230428T145-3","path":"CR-T145/20230428T145-3.JPG"},"CR-T145/20230428T145.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","location":[],"name":"20230428T145","path":"CR-T145/20230428T145.jpg"},"CR-T145/20230428t145-4.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","location":[],"name":"20230428t145-4","path":"CR-T145/20230428t145-4.JPG"},"Peking-Campus/IMG_3323.341785u5fpo0.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"IMG_3323.341785u5fpo0","path":"Peking-Campus/IMG_3323.341785u5fpo0.webp"},"Peking-Campus/R0002898.731l67sm3js0.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"R0002898.731l67sm3js0","path":"Peking-Campus/R0002898.731l67sm3js0.webp"},"Peking-Campus/R0002984.3gp6r250o3o0.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"R0002984.3gp6r250o3o0","path":"Peking-Campus/R0002984.3gp6r250o3o0.webp"},"Peking-Campus/R0002987.299hazb9cy4g.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"R0002987.299hazb9cy4g","path":"Peking-Campus/R0002987.299hazb9cy4g.webp"},"Peking-City/IMG_4179.1531lmyb1v1c.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4179.1531lmyb1v1c","path":"Peking-City/IMG_4179.1531lmyb1v1c.webp"},"Peking-City/IMG_4201.77nhzyxk2w00.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4201.77nhzyxk2w00","path":"Peking-City/IMG_4201.77nhzyxk2w00.webp"},"Peking-City/IMG_4270.3sslflp26xs0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4270.3sslflp26xs0","path":"Peking-City/IMG_4270.3sslflp26xs0.webp"},"Peking-City/IMG_4279.70opmygnzq80.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4279.70opmygnzq80","path":"Peking-City/IMG_4279.70opmygnzq80.webp"},"Peking-City/IMG_4286.18rvenedkn1c.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4286.18rvenedkn1c","path":"Peking-City/IMG_4286.18rvenedkn1c.webp"},"Peking-City/IMG_4288.6r7c5cc8v5o0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4288.6r7c5cc8v5o0","path":"Peking-City/IMG_4288.6r7c5cc8v5o0.webp"},"Peking-City/IMG_4306.6jijzgm3k300.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4306.6jijzgm3k300","path":"Peking-City/IMG_4306.6jijzgm3k300.webp"},"Peking-City/IMG_4310.4s5xjpjqqlq0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4310.4s5xjpjqqlq0","path":"Peking-City/IMG_4310.4s5xjpjqqlq0.webp"},"Peking-City/IMG_4317.5l08gas8f6k0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4317.5l08gas8f6k0","path":"Peking-City/IMG_4317.5l08gas8f6k0.webp"},"Peking-City/IMG_4340.34itq8hh3fm0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4340.34itq8hh3fm0","path":"Peking-City/IMG_4340.34itq8hh3fm0.webp"},"Peking-City/IMG_4343.58iqvmaohrs0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4343.58iqvmaohrs0","path":"Peking-City/IMG_4343.58iqvmaohrs0.webp"},"Peking-City/IMG_4346.2mgyoj22lho0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4346.2mgyoj22lho0","path":"Peking-City/IMG_4346.2mgyoj22lho0.webp"},"Peking-City/LY20230827QuZhou.34a290iu69q0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"LY20230827QuZhou.34a290iu69q0","path":"Peking-City/LY20230827QuZhou.34a290iu69q0.webp"},"Peking-ST/20230420haidian.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230420haidian","path":"Peking-ST/20230420haidian.jpg"},"Peking-ST/20230423haidian.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","location":[],"name":"20230423haidian","path":"Peking-ST/20230423haidian.jpg"},"Peking-ST/20230423qijiuba1.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1600 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1600 ","location":[],"name":"20230423qijiuba1","path":"Peking-ST/20230423qijiuba1.jpg"},"Peking-ST/20230423qijiuba2.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","location":[],"name":"20230423qijiuba2","path":"Peking-ST/20230423qijiuba2.jpg"},"Peking-ST/20230517panjiayuan.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","location":[],"name":"20230517panjiayuan","path":"Peking-ST/20230517panjiayuan.JPG"},"Peking-ST/20230520houhai1.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F4 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F4 ISO6400 ","location":[],"name":"20230520houhai1","path":"Peking-ST/20230520houhai1.JPG"},"Peking-ST/20230522zgcforum.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","location":[],"name":"20230522zgcforum","path":"Peking-ST/20230522zgcforum.jpg"},"Peking-ST/20230522zgcforum1.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F63/10 ISO800 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F63/10 ISO800 ","location":[],"name":"20230522zgcforum1","path":"Peking-ST/20230522zgcforum1.jpg"},"Peking-ST/20230523beiwucun.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F28/5 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F28/5 ISO200 ","location":[],"name":"20230523beiwucun","path":"Peking-ST/20230523beiwucun.jpg"},"Peking-ST/20230525zgc.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F8 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F8 ISO200 ","location":[],"name":"20230525zgc","path":"Peking-ST/20230525zgc.jpg"},"Peking-ST/20230527panjiayuan.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","location":[],"name":"20230527panjiayuan","path":"Peking-ST/20230527panjiayuan.jpg"},"Peking-ST/20230601dior.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230601dior","path":"Peking-ST/20230601dior.jpg"},"Peking-ST/20230609haidian.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F7/2 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F7/2 ISO200 ","location":[],"name":"20230609haidian","path":"Peking-ST/20230609haidian.jpg"},"Peking-ST/20230609xiangshan.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","location":[],"name":"20230609xiangshan","path":"Peking-ST/20230609xiangshan.jpg"},"Peking-ST/20230613wukesong.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F16/5 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F16/5 ISO200 ","location":[],"name":"20230613wukesong","path":"Peking-ST/20230613wukesong.JPG"},"Peking-ST/20230625yuetanpark.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","location":[],"name":"20230625yuetanpark","path":"Peking-ST/20230625yuetanpark.jpg"},"Peking-ST/20230628.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","location":[],"name":"20230628","path":"Peking-ST/20230628.jpg"},"Peking-ST/20230628shuangxiu.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","location":[],"name":"20230628shuangxiu","path":"Peking-ST/20230628shuangxiu.jpg"},"Peking-ST/20230628shuangxiu1.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230628shuangxiu1","path":"Peking-ST/20230628shuangxiu1.jpg"},"Peking-ST/20230628shuangxiu2.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","location":[],"name":"20230628shuangxiu2","path":"Peking-ST/20230628shuangxiu2.jpg"},"Peking-ST/20230628shuangxiu3.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","location":[],"name":"20230628shuangxiu3","path":"Peking-ST/20230628shuangxiu3.JPG"},"Peking-ST/20230630guomei.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2500 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2500 ","location":[],"name":"20230630guomei","path":"Peking-ST/20230630guomei.jpg"}}`);
-          const keys = Object.keys(all);
-          const max = keys.length;
-          const random = Math.floor(Math.random() * max);
-          const key = keys[random];
-          const v = all[key];
-          console.log(all.length);
- 
-          console.log(v);
-          if (v !== null) {
-            var imgLink = 'https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main' + '/' + v.path;
-            imageBox.src = imgLink;
-            descBox.text(v.exif);
-          }
-        </script>
-        <style>
-          body {
+    </div>
+    <script>
+        var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
+        var descBox = $("#descbox");
+        var nextBox = $("#nextbox");
+        const all = JSON.parse(`{"CR-T109/20230111T10-9.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2000 ","location":[],"name":"20230111T10-9","path":"CR-T109/20230111T10-9.jpg"},"CR-T109/20230111T109-10.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","location":[],"name":"20230111T109-10","path":"CR-T109/20230111T109-10.jpg"},"CR-T109/20230111T109-2.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","location":[],"name":"20230111T109-2","path":"CR-T109/20230111T109-2.JPG"},"CR-T109/20230111T109-3.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","location":[],"name":"20230111T109-3","path":"CR-T109/20230111T109-3.JPG"},"CR-T109/20230111T109-4.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","location":[],"name":"20230111T109-4","path":"CR-T109/20230111T109-4.JPG"},"CR-T109/20230111T109-5.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","location":[],"name":"20230111T109-5","path":"CR-T109/20230111T109-5.JPG"},"CR-T109/20230111T109-6.2mdwso60l5e0.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230111T109-6.2mdwso60l5e0","path":"CR-T109/20230111T109-6.2mdwso60l5e0.jpg"},"CR-T109/20230111T109-7.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230111T109-7","path":"CR-T109/20230111T109-7.jpg"},"CR-T109/20230111T109-8.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230111T109-8","path":"CR-T109/20230111T109-8.JPG"},"CR-T109/2023011T109-1.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"2023011T109-1","path":"CR-T109/2023011T109-1.JPG"},"CR-T145/20230428T145-1.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230428T145-1","path":"CR-T145/20230428T145-1.JPG"},"CR-T145/20230428T145-2.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO4000 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO4000 ","location":[],"name":"20230428T145-2","path":"CR-T145/20230428T145-2.JPG"},"CR-T145/20230428T145-3.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230428T145-3","path":"CR-T145/20230428T145-3.JPG"},"CR-T145/20230428T145.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","location":[],"name":"20230428T145","path":"CR-T145/20230428T145.jpg"},"CR-T145/20230428t145-4.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","dir":"CR-T145","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","location":[],"name":"20230428t145-4","path":"CR-T145/20230428t145-4.JPG"},"Peking-Campus/IMG_3323.341785u5fpo0.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"IMG_3323.341785u5fpo0","path":"Peking-Campus/IMG_3323.341785u5fpo0.webp"},"Peking-Campus/R0002898.731l67sm3js0.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"R0002898.731l67sm3js0","path":"Peking-Campus/R0002898.731l67sm3js0.webp"},"Peking-Campus/R0002984.3gp6r250o3o0.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"R0002984.3gp6r250o3o0","path":"Peking-Campus/R0002984.3gp6r250o3o0.webp"},"Peking-Campus/R0002987.299hazb9cy4g.webp":{"desc":" - · - ","dir":"Peking-Campus","exif":"","location":[],"name":"R0002987.299hazb9cy4g","path":"Peking-Campus/R0002987.299hazb9cy4g.webp"},"Peking-City/IMG_4179.1531lmyb1v1c.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4179.1531lmyb1v1c","path":"Peking-City/IMG_4179.1531lmyb1v1c.webp"},"Peking-City/IMG_4201.77nhzyxk2w00.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4201.77nhzyxk2w00","path":"Peking-City/IMG_4201.77nhzyxk2w00.webp"},"Peking-City/IMG_4270.3sslflp26xs0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4270.3sslflp26xs0","path":"Peking-City/IMG_4270.3sslflp26xs0.webp"},"Peking-City/IMG_4279.70opmygnzq80.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4279.70opmygnzq80","path":"Peking-City/IMG_4279.70opmygnzq80.webp"},"Peking-City/IMG_4286.18rvenedkn1c.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4286.18rvenedkn1c","path":"Peking-City/IMG_4286.18rvenedkn1c.webp"},"Peking-City/IMG_4288.6r7c5cc8v5o0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4288.6r7c5cc8v5o0","path":"Peking-City/IMG_4288.6r7c5cc8v5o0.webp"},"Peking-City/IMG_4306.6jijzgm3k300.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4306.6jijzgm3k300","path":"Peking-City/IMG_4306.6jijzgm3k300.webp"},"Peking-City/IMG_4310.4s5xjpjqqlq0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4310.4s5xjpjqqlq0","path":"Peking-City/IMG_4310.4s5xjpjqqlq0.webp"},"Peking-City/IMG_4317.5l08gas8f6k0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4317.5l08gas8f6k0","path":"Peking-City/IMG_4317.5l08gas8f6k0.webp"},"Peking-City/IMG_4340.34itq8hh3fm0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4340.34itq8hh3fm0","path":"Peking-City/IMG_4340.34itq8hh3fm0.webp"},"Peking-City/IMG_4343.58iqvmaohrs0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4343.58iqvmaohrs0","path":"Peking-City/IMG_4343.58iqvmaohrs0.webp"},"Peking-City/IMG_4346.2mgyoj22lho0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"IMG_4346.2mgyoj22lho0","path":"Peking-City/IMG_4346.2mgyoj22lho0.webp"},"Peking-City/LY20230827QuZhou.34a290iu69q0.webp":{"desc":" - · - ","dir":"Peking-City","exif":"","location":[],"name":"LY20230827QuZhou.34a290iu69q0","path":"Peking-City/LY20230827QuZhou.34a290iu69q0.webp"},"Peking-ST/20230420haidian.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230420haidian","path":"Peking-ST/20230420haidian.jpg"},"Peking-ST/20230423haidian.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO5000 ","location":[],"name":"20230423haidian","path":"Peking-ST/20230423haidian.jpg"},"Peking-ST/20230423qijiuba1.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1600 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1600 ","location":[],"name":"20230423qijiuba1","path":"Peking-ST/20230423qijiuba1.jpg"},"Peking-ST/20230423qijiuba2.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","location":[],"name":"20230423qijiuba2","path":"Peking-ST/20230423qijiuba2.jpg"},"Peking-ST/20230517panjiayuan.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO400 ","location":[],"name":"20230517panjiayuan","path":"Peking-ST/20230517panjiayuan.JPG"},"Peking-ST/20230520houhai1.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F4 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F4 ISO6400 ","location":[],"name":"20230520houhai1","path":"Peking-ST/20230520houhai1.JPG"},"Peking-ST/20230522zgcforum.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO800 ","location":[],"name":"20230522zgcforum","path":"Peking-ST/20230522zgcforum.jpg"},"Peking-ST/20230522zgcforum1.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F63/10 ISO800 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F63/10 ISO800 ","location":[],"name":"20230522zgcforum1","path":"Peking-ST/20230522zgcforum1.jpg"},"Peking-ST/20230523beiwucun.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F28/5 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F28/5 ISO200 ","location":[],"name":"20230523beiwucun","path":"Peking-ST/20230523beiwucun.jpg"},"Peking-ST/20230525zgc.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F8 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F8 ISO200 ","location":[],"name":"20230525zgc","path":"Peking-ST/20230525zgc.jpg"},"Peking-ST/20230527panjiayuan.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO3200 ","location":[],"name":"20230527panjiayuan","path":"Peking-ST/20230527panjiayuan.jpg"},"Peking-ST/20230601dior.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230601dior","path":"Peking-ST/20230601dior.jpg"},"Peking-ST/20230609haidian.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F7/2 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F7/2 ISO200 ","location":[],"name":"20230609haidian","path":"Peking-ST/20230609haidian.jpg"},"Peking-ST/20230609xiangshan.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","location":[],"name":"20230609xiangshan","path":"Peking-ST/20230609xiangshan.jpg"},"Peking-ST/20230613wukesong.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F16/5 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F16/5 ISO200 ","location":[],"name":"20230613wukesong","path":"Peking-ST/20230613wukesong.JPG"},"Peking-ST/20230625yuetanpark.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","location":[],"name":"20230625yuetanpark","path":"Peking-ST/20230625yuetanpark.jpg"},"Peking-ST/20230628.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F9/2 ISO200 ","location":[],"name":"20230628","path":"Peking-ST/20230628.jpg"},"Peking-ST/20230628shuangxiu.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO320 ","location":[],"name":"20230628shuangxiu","path":"Peking-ST/20230628shuangxiu.jpg"},"Peking-ST/20230628shuangxiu1.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO6400 ","location":[],"name":"20230628shuangxiu1","path":"Peking-ST/20230628shuangxiu1.jpg"},"Peking-ST/20230628shuangxiu2.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO1250 ","location":[],"name":"20230628shuangxiu2","path":"Peking-ST/20230628shuangxiu2.jpg"},"Peking-ST/20230628shuangxiu3.JPG":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO640 ","location":[],"name":"20230628shuangxiu3","path":"Peking-ST/20230628shuangxiu3.JPG"},"Peking-ST/20230630guomei.jpg":{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2500 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        F14/5 ISO2500 ","location":[],"name":"20230630guomei","path":"Peking-ST/20230630guomei.jpg"}}`);
+        const keys = Object.keys(all);
+        const max = keys.length;
+        function nextImage() {
+            var random = Math.floor(Math.random() * max);
+            var key = keys[random];
+            var v = all[key];
+            if (v !== null) {
+                var imgLink = 'https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main' + '/' + v.path;
+                imageBox.src = imgLink;
+                var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
+                imageFancy.setAttribute("href", imgLink);
+                var fancyBoxImage = document.getElementsByClassName("fancybox__image")[0];
+                if (fancyBoxImage !== undefined) {
+                    fancyBoxImage.src = imgLink;
+                }
+                if (v.exif === "") {
+                    descBox.text(v.desc);
+                } else {
+                    descBox.text(v.exif);
+                }
+            }
+        }
+        nextBox.click(nextImage);
+        nextImage();
+    </script>
+    <style>
+        body {
             background-color: #fff;
-          }
-  
-          .album-comment {
+        }
+
+        .album-comment {
             max-width: 800px;
             margin: 0 auto;
-          }
-  
-          .album-article {
+        }
+
+        .album-article {
             font-size: 1.2rem;
-          }
-  
-          .hint-text {
+        }
+
+        .hint-text {
             color: black;
             opacity: 60%;
             padding-top: 4px;
-          }
-  
-          .pic-item {
+        }
+
+        .pic-item {
             background-color: black;
             background-size: cover;
             background-position: center;
             transition: all .3s ease-in-out;
             min-height: 200px;
             aspect-ratio: 3 / 2;
-          }
-  
-          .pic-item > a {
+        }
+
+        .pic-item>a {
             width: 100%;
             height: 100%;
             display: inline-block;
-          }
-  
-          .pic-box {
+        }
+
+        .pic-box {
             transition: all .3s ease-in-out;
             display: inline-block;
             width: 100%;
             height: 100%;
             object-fit: contain;
             margin: 0 auto;
-          }
-  
-          .album-info {
+        }
+
+        .album-info {
             flex-direction: column;
             justify-content: space-between;
             color: var(--main-black);
-          }
-  
-          .album-title {
+        }
+
+        .album-title {
             font-size: 2em;
-          }
-  
-          .album-subtitle {
+        }
+
+        .album-subtitle {
             font-size: 1.2em;
             opacity: 0.8;
-          }
-  
-  
-          .album-location {
+        }
+
+
+        .album-location {
             display: inline-flex;
             font-size: .8em;
             color: #71afdd;
             gap: 4px;
             padding-bottom: 4px;
-          }
-  
-          .album-list {
+        }
+
+        .album-list {
             padding-top: 6px;
             overflow-x: scroll;
-          }
-  
-          .album-item {
+        }
+
+        .album-item {
             background-color: black;
             aspect-ratio: 1 / 1;
             min-height: 100px;
             min-width: 100px;
             background-size: cover;
             background-position: center;
-          }
-  
-          @media (max-width: 768px) {
+        }
+
+        .album-next-one {
+            display: block;
+            text-align: center;
+            border-style: solid;
+            border-color: black;
+            background-color: white;
+            margin: 0 auto;
+            padding: 1em 1.5em;
+            border-width: 2px;
+            font-weight: bold;
+        }
+
+        .album-next-one:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .album-next-one:active {
+            background-color: white;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
             .content-area {
-              max-width: 100vw;
+                max-width: 100vw;
             }
-  
+
             .pic-area {
-              grid-column: span 3 / span 3;
-              padding: 16px;
+                grid-column: span 3 / span 3;
+                padding: 16px;
             }
-  
+
             .album-info {
-              grid-column: span 3 / span 3;
-              padding: 12px;
+                grid-column: span 3 / span 3;
+                padding: 12px;
             }
-  
+
             .album-article {
-              padding: 2px;
+                padding: 2px;
             }
-  
+
             .album-title {
-              font-size: 1.5em;
+                font-size: 1.5em;
             }
-          }
-  
-          @media (min-width: 769px) {
+        }
+
+        @media (min-width: 769px) {
             .content-area {
-              max-width: 92%;
-              margin: 0 auto;
-              padding: 135px 16px 16px 16px;
+                max-width: 92%;
+                margin: 0 auto;
+                padding: 135px 16px 16px 16px;
             }
-  
+
             .album-article {
-              margin-top: 2px;
+                margin-top: 2px;
             }
-  
+
             .default-article {
-              max-height: 500px;
-              overflow-y: scroll;
+                max-height: 500px;
+                overflow-y: scroll;
             }
-  
+
             .pic-area {
-              grid-column: span 2 / span 2;
+                grid-column: span 2 / span 2;
             }
-  
+
             .album-info {
-              grid-column: span 1 / span 1;
-              margin-left: 12px;
+                grid-column: span 1 / span 1;
             }
-          }
-  
-          @media (min-width: 1304px) {
+        }
+
+        @media (min-width: 1304px) {
             .content-area {
-              max-width: 1400px;
+                max-width: 1400px;
             }
-  
+
             .fullscreen-content-area {
-              max-width: 100vh;
+                max-height: 80vh;
+                max-width: 100vh;
             }
-          }
-  
-          @media (prefers-color-scheme: dark) {
+        }
+
+        @media (prefers-color-scheme: dark) {
             .album-info {
-              color: #fff;
+                color: #fff;
             }
-  
+
             .album-location {
-              color: #bdbdbd;
+                color: #bdbdbd;
             }
-  
+
             .hint-text {
-              color: white;
-              opacity: 80%;
+                color: white;
+                opacity: 80%;
             }
-  
+
             .pic-item {
-              background-color: grey;
+                background-color: black;
             }
-  
+
             .album-item {
-              background-color: grey;
+                background-color: black;
             }
-          }
-  
-          .fullscreen-pic {
+
+            .album-next-one {
+                border-color: white;
+                background-color: black;
+                color: white;
+            }
+
+            .album-next-one:hover {
+                color: black;
+                background-color: white;
+            }
+
+            .album-next-one:active {
+                border-color: white;
+                background-color: black;
+                color: white;
+            }
+        }
+
+        .fullscreen-pic {
             grid-column: span 3 / span 3;
-          }
-  
-          .fullscreen-info {
+        }
+
+        .fullscreen-info {
             grid-column: span 3 / span 3;
-          }
-        </style>
-  </section>
+        }
+    </style>
+</section>
   <!-- Footer -->
   <!-- Footer -->
 <footer class="itp-footer text-center">
