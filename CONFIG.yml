@@ -16,3 +16,6 @@ root: /RiGallery
 photography_page:
   slogan: true
   slogan_descr: 'The moments when I pressed the shutter, the moments are forever.'
+
+thumbnail_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/
+base_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main
