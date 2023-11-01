@@ -440,7 +440,7 @@
       </div>
     </div>
   </div>
-  
+  <!-- 
     
     
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4179.1531lmyb1v1c.webp" as="image" />  
@@ -492,7 +492,7 @@
     
     
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/LY20230827QuZhou.34a290iu69q0.webp" as="image" />  
-  
+   -->
   
       </div>
       <script>
@@ -504,6 +504,7 @@
           var imgLink = target.getAttribute('rel');
           var name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
+          imageBox.src = '';
           imageBox.src = imgLink; //替换图片
           imageBox.setAttribute("share", target.getAttribute('share'));
           var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
@@ -722,11 +723,11 @@
           }
 
           .pic-item {
-            background-color: grey;
+            background-color: black;
           }
 
           .album-item {
-            background-color: grey;
+            background-color: black;
           }
         }
 

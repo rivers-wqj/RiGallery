@@ -569,7 +569,7 @@
       </div>
     </div>
   </div>
-  
+  <!-- 
     
     
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Granada-Nature/1A8A141F-F5EC-43C8-A540-C47221EC387A.jpeg" as="image" />  
@@ -661,7 +661,7 @@
     
     
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Granada-Nature/EFDE0A82-824D-4057-8362-50D0B6C7D365.jpeg" as="image" />  
-  
+   -->
   
       </div>
       <script>
@@ -673,6 +673,7 @@
           var imgLink = target.getAttribute('rel');
           var name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
+          imageBox.src = '';
           imageBox.src = imgLink; //替换图片
           imageBox.setAttribute("share", target.getAttribute('share'));
           var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
@@ -891,11 +892,11 @@
           }
 
           .pic-item {
-            background-color: grey;
+            background-color: black;
           }
 
           .album-item {
-            background-color: grey;
+            background-color: black;
           }
         }
 

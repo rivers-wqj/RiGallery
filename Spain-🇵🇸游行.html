@@ -400,7 +400,7 @@
       </div>
     </div>
   </div>
-  
+  <!-- 
     
     
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.jpeg" as="image" />  
@@ -440,7 +440,7 @@
     
     
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.jpeg" as="image" />  
-  
+   -->
   
       </div>
       <script>
@@ -452,6 +452,7 @@
           var imgLink = target.getAttribute('rel');
           var name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
+          imageBox.src = '';
           imageBox.src = imgLink; //替换图片
           imageBox.setAttribute("share", target.getAttribute('share'));
           var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
@@ -670,11 +671,11 @@
           }
 
           .pic-item {
-            background-color: grey;
+            background-color: black;
           }
 
           .album-item {
-            background-color: grey;
+            background-color: black;
           }
         }
 
