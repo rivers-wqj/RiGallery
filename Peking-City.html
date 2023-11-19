@@ -234,14 +234,120 @@
   <!-- Main Content -->
   <section class="pjax-area">
   <div class="content-area post-album default-content-area">
-    <div class="grid grid-cols-3 gap-2">
-      <div class="pic-area default-pic">
-        <div class="pic-item" />
-        <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4179.1531lmyb1v1c.webp" />
+    <div class="grid grid-cols-3">
+      <div class="default-pic gap-2 wrapper">
+        <div class="pic-area">
+          <div class="pic-item" />
+          <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4179.1531lmyb1v1c.webp" />
+        </div>
+        <div id="exif-wrapper" class="pic-wrapper">
+    <div class="exif-left" style="display: flex; flex-direction: column; justify-content: center;">
+        <div id="exif-param"></div>
+        <div id="exif-date"></div>
+    </div>
+    <div class="exif-right" style="display: flex; flex-direction:row; justify-content: start;">
+        <div style="display: flex; justify-content: center; flex-direction: column;">
+            <img id="exif-maker-logo" class="nofancy" style="object-fit: cover;"></img>
+        </div>
+        <div style="margin-left: 10px; width: 1px; background-color: black;"></div>
+        <div style="padding-left: 10px; position: relative;">
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <div id="exif-maker"></div>
+                <div id="exif-lens"></div>
+                <div id="exif-author"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="normal-wrapper" class="pic-wrapper" style="height: 68px; justify-content: center; flex-direction: column;">
+    <div id="no-exif-data" style="text-align: center; font-size: large; font-weight: lighter;">
+    </div>
+</div>
+<style>
+    #exif-maker-logo {
+        text-align: center;
+        vertical-align: baseline;
+        height: 60px;
+    }
+
+    #exif-param {
+        font-weight: bold;
+        font-size: 80%;
+    }
+
+    #exif-maker {
+        font-size: 80%;
+    }
+
+    #exif-date {
+        margin-top: 4px;
+        font-weight: lighter;
+        color: gray;
+        font-size: 80%;
+    }
+
+    #exif-lens,
+    #exif-author {
+        font-weight: lighter;
+        color: gray;
+        font-size: 80%;
+    }
+
+    .pic-wrapper {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding: 4px 8px;
+    }
+
+    .pic-area {
+        border-style: solid;
+        border-width: thin;
+        border-color: rgb(22, 22, 22);
+    }
+
+    @media (max-width: 768px) {
+        .pic-wrapper {
+            padding: 4px 0px;
+        }        
+
+        #exif-param {
+            font-size: .5rem;
+        }
+
+        #exif-date {
+            font-size: .6rem;
+        }
+
+        #exif-maker {
+            font-size: .5rem;
+        }
+
+        #exif-lens,
+        #exif-author {
+            font-size: .5rem;
+        }
+
+        #exif-maker-logo {
+            height: 30px;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .pic-area {
+            border-style: solid;
+            border-width: thin;
+            background-color: white;
+            border-color: white;
+        }        
+    }
+</style>  
       </div>
-      <p id="descbox" class="text-center text-xs hint-text">  - · -  </p>
+      <p id="descbox" class="text-center text-xs hint-text" hidden>  - · -  </p>
       <div class="album-list flex gap-2">
         
+          
+          
           
           
           
@@ -252,8 +358,11 @@
             name="IMG_4179.1531lmyb1v1c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4179.1531lmyb1v1c.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4179.1531lmyb1v1c.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4179.1531lmyb1v1c","path":"Peking-City/IMG_4179.1531lmyb1v1c.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4179.1531lmyb1v1c.webp"
             aria-label="the photo 0"></a>
+          
+          
           
           
           
@@ -265,8 +374,11 @@
             name="IMG_4201.77nhzyxk2w00" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4201.77nhzyxk2w00.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4201.77nhzyxk2w00.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4201.77nhzyxk2w00","path":"Peking-City/IMG_4201.77nhzyxk2w00.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4201.77nhzyxk2w00.webp"
             aria-label="the photo 1"></a>
+          
+          
           
           
           
@@ -278,8 +390,11 @@
             name="IMG_4270.3sslflp26xs0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4270.3sslflp26xs0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4270.3sslflp26xs0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4270.3sslflp26xs0","path":"Peking-City/IMG_4270.3sslflp26xs0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4270.3sslflp26xs0.webp"
             aria-label="the photo 2"></a>
+          
+          
           
           
           
@@ -291,8 +406,11 @@
             name="IMG_4279.70opmygnzq80" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4279.70opmygnzq80.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4279.70opmygnzq80.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4279.70opmygnzq80","path":"Peking-City/IMG_4279.70opmygnzq80.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4279.70opmygnzq80.webp"
             aria-label="the photo 3"></a>
+          
+          
           
           
           
@@ -304,8 +422,11 @@
             name="IMG_4286.18rvenedkn1c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4286.18rvenedkn1c.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4286.18rvenedkn1c.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4286.18rvenedkn1c","path":"Peking-City/IMG_4286.18rvenedkn1c.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4286.18rvenedkn1c.webp"
             aria-label="the photo 4"></a>
+          
+          
           
           
           
@@ -317,8 +438,11 @@
             name="IMG_4288.6r7c5cc8v5o0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4288.6r7c5cc8v5o0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4288.6r7c5cc8v5o0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4288.6r7c5cc8v5o0","path":"Peking-City/IMG_4288.6r7c5cc8v5o0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4288.6r7c5cc8v5o0.webp"
             aria-label="the photo 5"></a>
+          
+          
           
           
           
@@ -330,8 +454,11 @@
             name="IMG_4306.6jijzgm3k300" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4306.6jijzgm3k300.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4306.6jijzgm3k300.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4306.6jijzgm3k300","path":"Peking-City/IMG_4306.6jijzgm3k300.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4306.6jijzgm3k300.webp"
             aria-label="the photo 6"></a>
+          
+          
           
           
           
@@ -343,8 +470,11 @@
             name="IMG_4310.4s5xjpjqqlq0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4310.4s5xjpjqqlq0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4310.4s5xjpjqqlq0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4310.4s5xjpjqqlq0","path":"Peking-City/IMG_4310.4s5xjpjqqlq0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4310.4s5xjpjqqlq0.webp"
             aria-label="the photo 7"></a>
+          
+          
           
           
           
@@ -356,8 +486,11 @@
             name="IMG_4317.5l08gas8f6k0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4317.5l08gas8f6k0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4317.5l08gas8f6k0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4317.5l08gas8f6k0","path":"Peking-City/IMG_4317.5l08gas8f6k0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4317.5l08gas8f6k0.webp"
             aria-label="the photo 8"></a>
+          
+          
           
           
           
@@ -369,8 +502,11 @@
             name="IMG_4340.34itq8hh3fm0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4340.34itq8hh3fm0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4340.34itq8hh3fm0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4340.34itq8hh3fm0","path":"Peking-City/IMG_4340.34itq8hh3fm0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4340.34itq8hh3fm0.webp"
             aria-label="the photo 9"></a>
+          
+          
           
           
           
@@ -382,8 +518,11 @@
             name="IMG_4343.58iqvmaohrs0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4343.58iqvmaohrs0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4343.58iqvmaohrs0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4343.58iqvmaohrs0","path":"Peking-City/IMG_4343.58iqvmaohrs0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4343.58iqvmaohrs0.webp"
             aria-label="the photo 10"></a>
+          
+          
           
           
           
@@ -395,8 +534,11 @@
             name="IMG_4346.2mgyoj22lho0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/IMG_4346.2mgyoj22lho0.webp"
             desc="  - · -  "
             share="Peking-City/IMG_4346.2mgyoj22lho0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"IMG_4346.2mgyoj22lho0","path":"Peking-City/IMG_4346.2mgyoj22lho0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/IMG_4346.2mgyoj22lho0.webp"
             aria-label="the photo 11"></a>
+          
+          
           
           
           
@@ -408,6 +550,7 @@
             name="LY20230827QuZhou.34a290iu69q0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-City/LY20230827QuZhou.34a290iu69q0.webp"
             desc="  - · -  "
             share="Peking-City/LY20230827QuZhou.34a290iu69q0.webp"
+            extra='{"desc":" - · - ","dir":"Peking-City","exif":"","exif_data":{},"location":[],"name":"LY20230827QuZhou.34a290iu69q0","path":"Peking-City/LY20230827QuZhou.34a290iu69q0.webp"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-City/LY20230827QuZhou.34a290iu69q0.webp"
             aria-label="the photo 12"></a>
           
@@ -498,12 +641,35 @@
       <script>
         var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
         var descBox = $("#descbox");
+        var wrapper = $("#exif-wrapper");
+        var exifParam = $("#exif-param");
+        var exifMaker = $("#exif-maker");
+        var exifDate = $("#exif-date");
+        var exifLens = $("#exif-lens");
+        var exifLogo = $("#exif-maker-logo");
+        var exifAuthor = $("#exif-author");
+        var normalWrapper = $("#normal-wrapper");
+        var normalData = $("#no-exif-data");
+
         imgno = 0; // 进入页面时，设定初始的图片编号为0 // 定义新变量时不使用 var 则为全局变量、
+        function changeExifData(v) {
+          console.log(Object.keys(v.exif_data))
+          if (Object.keys(v.exif_data).length === 0) {
+            wrapper.hide();
+            normalWrapper.show();
+            normalData.text("Shot By " + "WQJ");
+          } else {
+            wrapper.show();
+            normalWrapper.hide();
+            wrapperData(v, "WQJ");
+          }
+        }
         function changeImageWith(target) {
           imgno = target.getAttribute('id'); 
           var imgLink = target.getAttribute('rel');
           var name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
+          var v = JSON.parse(target.getAttribute('extra'));
           imageBox.src = '';
           imageBox.src = imgLink; //替换图片
           imageBox.setAttribute("share", target.getAttribute('share'));
@@ -515,6 +681,7 @@
           }
           target.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
           descBox.text(desc);
+          changeExifData(v);
           updateParams(name);
         }
         function cheangeImageInSelector() {
@@ -533,8 +700,11 @@
           changeImageWithName(name)
         } else {
           var value = $(`#0`)[0];
+          var v = JSON.parse(value.getAttribute('extra'));
+          changeExifData(v);
           imageBox.setAttribute("share", value.getAttribute('share'));
         }
+        // key
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
           if (event.keyCode === 37) {
@@ -635,7 +805,7 @@
         }
 
         .album-list {
-          padding-top: 6px;
+          padding-top: 12px;
           overflow-x: scroll;
         }
 
@@ -655,7 +825,11 @@
 
           .pic-area {
             grid-column: span 3 / span 3;
-            padding: 16px;
+            padding: 8px 8px 0 8px;
+          }
+
+          .default-pic {
+            grid-column: span 3 / span 3;
           }
 
           .album-info {
@@ -670,13 +844,17 @@
           .album-title {
             font-size: 1.5em;
           }
+
+          .wrapper {
+            padding: 8px;
+          }
         }
 
         @media (min-width: 769px) {
           .content-area {
             max-width: 92%;
             margin: 0 auto;
-            padding: 135px 16px 16px 16px;
+            padding: 115px 16px 16px 16px;
           }
 
           .album-article {
@@ -688,13 +866,20 @@
             overflow-y: scroll;
           }
 
+          .default-info {
+            padding-left: 16px;
+          }
+
           .pic-area {
+            grid-column: span 2 / span 2;
+          }
+
+          .default-pic {
             grid-column: span 2 / span 2;
           }
 
           .album-info {
             grid-column: span 1 / span 1;
-            margin-left: 12px;
           }
         }
 
