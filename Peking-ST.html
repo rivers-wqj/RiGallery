@@ -53,7 +53,7 @@
   <link rel="apple-touch-icon" sizes="114x114" href="https://imgur.lzmun.com/picgo/after2022/tripper2color.png_iPhoneHD" />
   <link rel="apple-touch-icon" sizes="144x144" href="https://imgur.lzmun.com/picgo/after2022/tripper2color.png_RetinaiPad" />
   <!-- 添加 RSS 订阅 -->
-  <link rel="alternate" type="application/rss+xml" title="照片集" href="/atom.xml" />
+  <link rel="alternate" type="application/rss+xml" title="照片集" href="/rss" />
   <!-- uc强制竖屏 -->
   <meta name="screen-orientation" content="portrait">
   <!-- QQ强制竖屏 -->
@@ -68,7 +68,8 @@
   <meta name="x5-page-mode" content="app">
   <!-- https://material.io/resources/icons/?style=outline -->
   
-  <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_18.4a5f87dae8e6f9e336b9ad6fa00f8e8f.js"></script>
+  
+  <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_29703_14.95e63f49ecd5a866541aee0cf8ec0fac.js"></script>
   
   
 <style>
@@ -232,11 +233,12 @@
   }
 </style>
   <!-- Main Content -->
-  <section class="pjax-area">
+  <script src="js/html2canvas.js"></script>
+<section class="pjax-area">
   <div class="content-area post-album default-content-area">
     <div class="grid grid-cols-3">
       <div class="default-pic gap-2 wrapper">
-        <div class="pic-area">
+        <div id="all-pic" class="pic-area">
           <div class="pic-item" />
           <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230420haidian.jpg" />
         </div>
@@ -267,7 +269,7 @@
     #exif-maker-logo {
         text-align: center;
         vertical-align: baseline;
-        height: 60px;
+        height: 40px;
     }
 
     #exif-param {
@@ -343,7 +345,7 @@
     }
 </style>  
       </div>
-      <p id="descbox" class="text-center text-xs hint-text" hidden> RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 6400  </p>
+      <p id="descbox" class="text-center text-xs hint-text" hidden>  - · -  </p>
       <div class="album-list flex gap-2">
         
           
@@ -356,9 +358,9 @@
           
           <a class="album-item lazy" id="0"
             name="20230420haidian" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230420haidian.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="Peking-ST/20230420haidian.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:20 19:58:22","EXIF ExposureTime":"1/60s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230420haidian","path":"Peking-ST/20230420haidian.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:20 19:58:22","EXIF ExposureTime":"1/60s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230420haidian","path":"Peking-ST/20230420haidian.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230420haidian.webp"
             aria-label="the photo 0"></a>
           
@@ -372,9 +374,9 @@
           
           <a class="album-item lazy" id="1"
             name="20230423haidian" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423haidian.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 5000  "
+            desc="  - · -  "
             share="Peking-ST/20230423haidian.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 5000 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 5000 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:23 22:33:03","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 5000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230423haidian","path":"Peking-ST/20230423haidian.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 5000 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:23 22:33:03","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 5000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230423haidian","path":"Peking-ST/20230423haidian.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230423haidian.webp"
             aria-label="the photo 1"></a>
           
@@ -388,9 +390,9 @@
           
           <a class="album-item lazy" id="2"
             name="20230423qijiuba1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba1.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 1600  "
+            desc="  - · -  "
             share="Peking-ST/20230423qijiuba1.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 1600 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 1600 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:23 20:44:18","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 1600","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230423qijiuba1","path":"Peking-ST/20230423qijiuba1.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 1600 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:23 20:44:18","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 1600","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230423qijiuba1","path":"Peking-ST/20230423qijiuba1.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230423qijiuba1.webp"
             aria-label="the photo 2"></a>
           
@@ -404,9 +406,9 @@
           
           <a class="album-item lazy" id="3"
             name="20230423qijiuba2" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba2.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320  "
+            desc="  - · -  "
             share="Peking-ST/20230423qijiuba2.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:23 20:47:21","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 320","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230423qijiuba2","path":"Peking-ST/20230423qijiuba2.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320 ","exif_data":{"EXIF DateTimeOriginal":"2023:04:23 20:47:21","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 320","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230423qijiuba2","path":"Peking-ST/20230423qijiuba2.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230423qijiuba2.webp"
             aria-label="the photo 3"></a>
           
@@ -420,9 +422,9 @@
           
           <a class="album-item lazy" id="4"
             name="20230517panjiayuan" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230517panjiayuan.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/10s F2.8 ISO 400  "
+            desc="  - · -  "
             share="Peking-ST/20230517panjiayuan.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/10s F2.8 ISO 400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/10s F2.8 ISO 400 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:17 22:58:52","EXIF ExposureTime":"1/10s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230517panjiayuan","path":"Peking-ST/20230517panjiayuan.JPG"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/10s F2.8 ISO 400 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:17 22:58:52","EXIF ExposureTime":"1/10s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230517panjiayuan","path":"Peking-ST/20230517panjiayuan.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230517panjiayuan.webp"
             aria-label="the photo 4"></a>
           
@@ -436,9 +438,9 @@
           
           <a class="album-item lazy" id="5"
             name="20230520houhai1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230520houhai1.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F4 ISO 6400  "
+            desc="  - · -  "
             share="Peking-ST/20230520houhai1.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F4 ISO 6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F4 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:20 04:26:55","EXIF ExposureTime":"1/25s","EXIF FNumber":"F4","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230520houhai1","path":"Peking-ST/20230520houhai1.JPG"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F4 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:20 04:26:55","EXIF ExposureTime":"1/25s","EXIF FNumber":"F4","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230520houhai1","path":"Peking-ST/20230520houhai1.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230520houhai1.webp"
             aria-label="the photo 5"></a>
           
@@ -452,9 +454,9 @@
           
           <a class="album-item lazy" id="6"
             name="20230522zgcforum1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum1.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F6.3 ISO 800  "
+            desc="  - · -  "
             share="Peking-ST/20230522zgcforum1.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F6.3 ISO 800 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F6.3 ISO 800 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:22 19:32:52","EXIF ExposureTime":"1/50s","EXIF FNumber":"F6.3","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230522zgcforum1","path":"Peking-ST/20230522zgcforum1.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F6.3 ISO 800 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:22 19:32:52","EXIF ExposureTime":"1/50s","EXIF FNumber":"F6.3","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230522zgcforum1","path":"Peking-ST/20230522zgcforum1.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230522zgcforum1.webp"
             aria-label="the photo 6"></a>
           
@@ -468,9 +470,9 @@
           
           <a class="album-item lazy" id="7"
             name="20230522zgcforum" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 800  "
+            desc="  - · -  "
             share="Peking-ST/20230522zgcforum.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 800 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 800 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:22 19:32:23","EXIF ExposureTime":"1/50s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230522zgcforum","path":"Peking-ST/20230522zgcforum.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 800 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:22 19:32:23","EXIF ExposureTime":"1/50s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230522zgcforum","path":"Peking-ST/20230522zgcforum.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230522zgcforum.webp"
             aria-label="the photo 7"></a>
           
@@ -484,9 +486,9 @@
           
           <a class="album-item lazy" id="8"
             name="20230523beiwucun" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230523beiwucun.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F5.6 ISO 200  "
+            desc="  - · -  "
             share="Peking-ST/20230523beiwucun.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F5.6 ISO 200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F5.6 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:26 18:25:30","EXIF ExposureTime":"1/100s","EXIF FNumber":"F5.6","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230523beiwucun","path":"Peking-ST/20230523beiwucun.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F5.6 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:26 18:25:30","EXIF ExposureTime":"1/100s","EXIF FNumber":"F5.6","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230523beiwucun","path":"Peking-ST/20230523beiwucun.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230523beiwucun.webp"
             aria-label="the photo 8"></a>
           
@@ -500,9 +502,9 @@
           
           <a class="album-item lazy" id="9"
             name="20230525zgc" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230525zgc.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F8 ISO 200  "
+            desc="  - · -  "
             share="Peking-ST/20230525zgc.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F8 ISO 200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F8 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:25 16:14:02","EXIF ExposureTime":"1/60s","EXIF FNumber":"F8","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230525zgc","path":"Peking-ST/20230525zgc.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F8 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:25 16:14:02","EXIF ExposureTime":"1/60s","EXIF FNumber":"F8","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230525zgc","path":"Peking-ST/20230525zgc.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230525zgc.webp"
             aria-label="the photo 9"></a>
           
@@ -516,9 +518,9 @@
           
           <a class="album-item lazy" id="10"
             name="20230527panjiayuan" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230527panjiayuan.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200  "
+            desc="  - · -  "
             share="Peking-ST/20230527panjiayuan.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:17 22:58:06","EXIF ExposureTime":"1/60s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230527panjiayuan","path":"Peking-ST/20230527panjiayuan.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200 ","exif_data":{"EXIF DateTimeOriginal":"2023:05:17 22:58:06","EXIF ExposureTime":"1/60s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230527panjiayuan","path":"Peking-ST/20230527panjiayuan.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230527panjiayuan.webp"
             aria-label="the photo 10"></a>
           
@@ -532,9 +534,9 @@
           
           <a class="album-item lazy" id="11"
             name="20230601dior" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230601dior.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="Peking-ST/20230601dior.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:01 02:54:58","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230601dior","path":"Peking-ST/20230601dior.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:01 02:54:58","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230601dior","path":"Peking-ST/20230601dior.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230601dior.webp"
             aria-label="the photo 11"></a>
           
@@ -548,9 +550,9 @@
           
           <a class="album-item lazy" id="12"
             name="20230609haidian" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609haidian.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/4s F3.5 ISO 200  "
+            desc="  - · -  "
             share="Peking-ST/20230609haidian.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/4s F3.5 ISO 200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/4s F3.5 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:09 23:54:09","EXIF ExposureTime":"1/4s","EXIF FNumber":"F3.5","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230609haidian","path":"Peking-ST/20230609haidian.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/4s F3.5 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:09 23:54:09","EXIF ExposureTime":"1/4s","EXIF FNumber":"F3.5","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230609haidian","path":"Peking-ST/20230609haidian.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230609haidian.webp"
             aria-label="the photo 12"></a>
           
@@ -564,9 +566,9 @@
           
           <a class="album-item lazy" id="13"
             name="20230609xiangshan" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609xiangshan.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 640  "
+            desc="  - · -  "
             share="Peking-ST/20230609xiangshan.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 640 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 640 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:09 19:50:16","EXIF ExposureTime":"1/50s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 640","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230609xiangshan","path":"Peking-ST/20230609xiangshan.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F2.8 ISO 640 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:09 19:50:16","EXIF ExposureTime":"1/50s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 640","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230609xiangshan","path":"Peking-ST/20230609xiangshan.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230609xiangshan.webp"
             aria-label="the photo 13"></a>
           
@@ -580,9 +582,9 @@
           
           <a class="album-item lazy" id="14"
             name="20230613wukesong" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230613wukesong.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F3.2 ISO 200  "
+            desc="  - · -  "
             share="Peking-ST/20230613wukesong.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F3.2 ISO 200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F3.2 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:13 19:21:48","EXIF ExposureTime":"1/80s","EXIF FNumber":"F3.2","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230613wukesong","path":"Peking-ST/20230613wukesong.JPG"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F3.2 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:13 19:21:48","EXIF ExposureTime":"1/80s","EXIF FNumber":"F3.2","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230613wukesong","path":"Peking-ST/20230613wukesong.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230613wukesong.webp"
             aria-label="the photo 14"></a>
           
@@ -596,9 +598,9 @@
           
           <a class="album-item lazy" id="15"
             name="20230625yuetanpark" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230625yuetanpark.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200  "
+            desc="  - · -  "
             share="Peking-ST/20230625yuetanpark.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:25 19:02:25","EXIF ExposureTime":"1/50s","EXIF FNumber":"F4.5","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230625yuetanpark","path":"Peking-ST/20230625yuetanpark.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:25 19:02:25","EXIF ExposureTime":"1/50s","EXIF FNumber":"F4.5","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230625yuetanpark","path":"Peking-ST/20230625yuetanpark.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230625yuetanpark.webp"
             aria-label="the photo 15"></a>
           
@@ -612,9 +614,9 @@
           
           <a class="album-item lazy" id="16"
             name="20230628" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200  "
+            desc="  - · -  "
             share="Peking-ST/20230628.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 18:35:34","EXIF ExposureTime":"1/50s","EXIF FNumber":"F4.5","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628","path":"Peking-ST/20230628.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/50s F4.5 ISO 200 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 18:35:34","EXIF ExposureTime":"1/50s","EXIF FNumber":"F4.5","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628","path":"Peking-ST/20230628.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628.webp"
             aria-label="the photo 16"></a>
           
@@ -628,9 +630,9 @@
           
           <a class="album-item lazy" id="17"
             name="20230628shuangxiu1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu1.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="Peking-ST/20230628shuangxiu1.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:44:19","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu1","path":"Peking-ST/20230628shuangxiu1.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:44:19","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu1","path":"Peking-ST/20230628shuangxiu1.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu1.webp"
             aria-label="the photo 17"></a>
           
@@ -644,9 +646,9 @@
           
           <a class="album-item lazy" id="18"
             name="20230628shuangxiu2" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu2.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F2.8 ISO 1250  "
+            desc="  - · -  "
             share="Peking-ST/20230628shuangxiu2.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F2.8 ISO 1250 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F2.8 ISO 1250 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:40:31","EXIF ExposureTime":"1/80s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 1250","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu2","path":"Peking-ST/20230628shuangxiu2.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F2.8 ISO 1250 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:40:31","EXIF ExposureTime":"1/80s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 1250","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu2","path":"Peking-ST/20230628shuangxiu2.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu2.webp"
             aria-label="the photo 18"></a>
           
@@ -660,9 +662,9 @@
           
           <a class="album-item lazy" id="19"
             name="20230628shuangxiu3" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu3.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 640  "
+            desc="  - · -  "
             share="Peking-ST/20230628shuangxiu3.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 640 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 640 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:40:58","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 640","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu3","path":"Peking-ST/20230628shuangxiu3.JPG"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 640 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:40:58","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 640","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu3","path":"Peking-ST/20230628shuangxiu3.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu3.webp"
             aria-label="the photo 19"></a>
           
@@ -676,9 +678,9 @@
           
           <a class="album-item lazy" id="20"
             name="20230628shuangxiu" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320  "
+            desc="  - · -  "
             share="Peking-ST/20230628shuangxiu.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:37:39","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 320","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu","path":"Peking-ST/20230628shuangxiu.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 320 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:28 19:37:39","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 320","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230628shuangxiu","path":"Peking-ST/20230628shuangxiu.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230628shuangxiu.webp"
             aria-label="the photo 20"></a>
           
@@ -692,9 +694,9 @@
           
           <a class="album-item lazy" id="21"
             name="20230630guomei" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 2500  "
+            desc="  - · -  "
             share="Peking-ST/20230630guomei.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 2500 ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 2500 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:30 14:52:34","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230630guomei","path":"Peking-ST/20230630guomei.jpg"}'
+            extra='{"desc":" - · - ","dir":"Peking-ST","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 2500 ","exif_data":{"EXIF DateTimeOriginal":"2023:06:30 14:52:34","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230630guomei","path":"Peking-ST/20230630guomei.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Peking-ST/20230630guomei.webp"
             aria-label="the photo 21"></a>
           
@@ -706,7 +708,10 @@
         <div class="album-info-btm">
           
           <div class="album-share album-tool">
-            <iconpark-icon name="aiming"></iconpark-icon><a id="share" href="javascript:void(0)"> Share Link. </a>
+            <iconpark-icon name="share-three"></iconpark-icon><a id="share" href="javascript:void(0)"> Share Link </a>
+          </div>
+          <div class="album-share album-tool">
+            <iconpark-icon name="down-picture"></iconpark-icon><a id="download" href="javascript:void(0)"> Download </a>
           </div>
         </div>        
         <div class="album-title">北京街头摄影</div>
@@ -873,16 +878,28 @@
           var value = $(`[name='${name}']`)[0];
           changeImageWith(value)
         };
-        const name = getParam('name')
+        var name = getParam('name')
         const len = +'22'
-        if (name !== "" && name !== null) {
+        if (name !== "" && name !== null && name !== 'null') {
           changeImageWithName(name)
         } else {
           var value = $(`#0`)[0];
+          name = value.getAttribute('name');
           var v = JSON.parse(value.getAttribute('extra'));
           changeExifData(v);
           imageBox.setAttribute("share", value.getAttribute('share'));
         }
+        $('#download').click(function () {
+          var node = document.getElementById('all-pic');
+          html2canvas(node, {
+            useCORS: true,
+            allowTaint: true,
+            scrollX: 0,
+            scrollY: 0,
+          }).then(function (canvas) {                  
+            simulateDownloadImageClick(canvas.toDataURL('image/png'),  name + '.png');
+          });
+        });        
         // key
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
@@ -919,6 +936,14 @@
         body {
           background-color: #fff;
         }
+
+        .fullscreen-pic {
+          grid-column: span 3 / span 3;
+        }
+
+        .fullscreen-info {
+          grid-column: span 3 / span 3;
+        }        
 
         .album-comment {
           max-width: 800px;
@@ -1093,14 +1118,6 @@
           .album-item {
             background-color: black;
           }
-        }
-
-        .fullscreen-pic {
-          grid-column: span 3 / span 3;
-        }
-
-        .fullscreen-info {
-          grid-column: span 3 / span 3;
         }
       </style>
 </section>

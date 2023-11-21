@@ -53,7 +53,7 @@
   <link rel="apple-touch-icon" sizes="114x114" href="https://imgur.lzmun.com/picgo/after2022/tripper2color.png_iPhoneHD" />
   <link rel="apple-touch-icon" sizes="144x144" href="https://imgur.lzmun.com/picgo/after2022/tripper2color.png_RetinaiPad" />
   <!-- 添加 RSS 订阅 -->
-  <link rel="alternate" type="application/rss+xml" title="照片集" href="/atom.xml" />
+  <link rel="alternate" type="application/rss+xml" title="照片集" href="/rss" />
   <!-- uc强制竖屏 -->
   <meta name="screen-orientation" content="portrait">
   <!-- QQ强制竖屏 -->
@@ -68,7 +68,8 @@
   <meta name="x5-page-mode" content="app">
   <!-- https://material.io/resources/icons/?style=outline -->
   
-  <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_18.4a5f87dae8e6f9e336b9ad6fa00f8e8f.js"></script>
+  
+  <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_29703_14.95e63f49ecd5a866541aee0cf8ec0fac.js"></script>
   
   
 <style>
@@ -232,11 +233,12 @@
   }
 </style>
   <!-- Main Content -->
-  <section class="pjax-area">
+  <script src="js/html2canvas.js"></script>
+<section class="pjax-area">
   <div class="content-area post-album default-content-area">
     <div class="grid grid-cols-3">
       <div class="default-pic gap-2 wrapper">
-        <div class="pic-area">
+        <div id="all-pic" class="pic-area">
           <div class="pic-item" />
           <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/2023011T109-1.JPG" />
         </div>
@@ -267,7 +269,7 @@
     #exif-maker-logo {
         text-align: center;
         vertical-align: baseline;
-        height: 60px;
+        height: 40px;
     }
 
     #exif-param {
@@ -343,7 +345,7 @@
     }
 </style>  
       </div>
-      <p id="descbox" class="text-center text-xs hint-text" hidden> RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400  </p>
+      <p id="descbox" class="text-center text-xs hint-text" hidden>  - · -  </p>
       <div class="album-list flex gap-2">
         
           
@@ -356,9 +358,9 @@
           
           <a class="album-item lazy" id="0"
             name="2023011T109-1" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/2023011T109-1.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="CR-T109/2023011T109-1.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 19:51:45","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"2023011T109-1","path":"CR-T109/2023011T109-1.JPG"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 19:51:45","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"2023011T109-1","path":"CR-T109/2023011T109-1.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/2023011T109-1.webp"
             aria-label="the photo 0"></a>
           
@@ -372,9 +374,9 @@
           
           <a class="album-item lazy" id="1"
             name="20230111T10-9" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T10-9.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 2000  "
+            desc="  - · -  "
             share="CR-T109/20230111T10-9.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 2000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 2000 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:00:48","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 2000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T10-9","path":"CR-T109/20230111T10-9.jpg"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 2000 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:00:48","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 2000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T10-9","path":"CR-T109/20230111T10-9.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T10-9.webp"
             aria-label="the photo 1"></a>
           
@@ -388,9 +390,9 @@
           
           <a class="album-item lazy" id="2"
             name="20230111T109-2" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-2.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 3200  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-2.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 3200 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 3200 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 20:49:06","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-2","path":"CR-T109/20230111T109-2.JPG"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 3200 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 20:49:06","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-2","path":"CR-T109/20230111T109-2.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-2.webp"
             aria-label="the photo 2"></a>
           
@@ -404,9 +406,9 @@
           
           <a class="album-item lazy" id="3"
             name="20230111T109-3" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-3.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 5000  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-3.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 5000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 5000 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 21:32:27","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 5000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-3","path":"CR-T109/20230111T109-3.JPG"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 5000 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 21:32:27","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 5000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-3","path":"CR-T109/20230111T109-3.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-3.webp"
             aria-label="the photo 3"></a>
           
@@ -420,9 +422,9 @@
           
           <a class="album-item lazy" id="4"
             name="20230111T109-4" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-4.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-4.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 04:47:30","EXIF ExposureTime":"1/60s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-4","path":"CR-T109/20230111T109-4.JPG"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/60s F2.8 ISO 3200 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 04:47:30","EXIF ExposureTime":"1/60s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-4","path":"CR-T109/20230111T109-4.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-4.webp"
             aria-label="the photo 4"></a>
           
@@ -436,9 +438,9 @@
           
           <a class="album-item lazy" id="5"
             name="20230111T109-5" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-5.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 5000  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-5.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 5000 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 5000 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:03:10","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 5000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-5","path":"CR-T109/20230111T109-5.JPG"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 5000 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:03:10","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 5000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-5","path":"CR-T109/20230111T109-5.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-5.webp"
             aria-label="the photo 5"></a>
           
@@ -452,9 +454,9 @@
           
           <a class="album-item lazy" id="6"
             name="20230111T109-6.2mdwso60l5e0" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-6.2mdwso60l5e0.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-6.2mdwso60l5e0.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:02:48","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-6.2mdwso60l5e0","path":"CR-T109/20230111T109-6.2mdwso60l5e0.jpg"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:02:48","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-6.2mdwso60l5e0","path":"CR-T109/20230111T109-6.2mdwso60l5e0.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-6.2mdwso60l5e0.webp"
             aria-label="the photo 6"></a>
           
@@ -468,9 +470,9 @@
           
           <a class="album-item lazy" id="7"
             name="20230111T109-7" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-7.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-7.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 19:48:37","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-7","path":"CR-T109/20230111T109-7.jpg"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 19:48:37","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-7","path":"CR-T109/20230111T109-7.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-7.webp"
             aria-label="the photo 7"></a>
           
@@ -484,9 +486,9 @@
           
           <a class="album-item lazy" id="8"
             name="20230111T109-8" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-8.JPG"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-8.JPG"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 19:48:20","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-8","path":"CR-T109/20230111T109-8.JPG"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 6400 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:11 19:48:20","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-8","path":"CR-T109/20230111T109-8.JPG"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-8.webp"
             aria-label="the photo 8"></a>
           
@@ -500,9 +502,9 @@
           
           <a class="album-item lazy" id="9"
             name="20230111T109-10" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/CR-T109/20230111T109-10.jpg"
-            desc=" RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 1250  "
+            desc="  - · -  "
             share="CR-T109/20230111T109-10.jpg"
-            extra='{"desc":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 1250 ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 1250 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:01:44","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 1250","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-10","path":"CR-T109/20230111T109-10.jpg"}'
+            extra='{"desc":" - · - ","dir":"CR-T109","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 1250 ","exif_data":{"EXIF DateTimeOriginal":"2023:01:12 07:01:44","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF ISOSpeedRatings":"ISO 1250","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230111T109-10","path":"CR-T109/20230111T109-10.jpg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//CR-T109/20230111T109-10.webp"
             aria-label="the photo 9"></a>
           
@@ -514,7 +516,10 @@
         <div class="album-info-btm">
           
           <div class="album-share album-tool">
-            <iconpark-icon name="aiming"></iconpark-icon><a id="share" href="javascript:void(0)"> Share Link. </a>
+            <iconpark-icon name="share-three"></iconpark-icon><a id="share" href="javascript:void(0)"> Share Link </a>
+          </div>
+          <div class="album-share album-tool">
+            <iconpark-icon name="down-picture"></iconpark-icon><a id="download" href="javascript:void(0)"> Download </a>
           </div>
         </div>        
         <div class="album-title">T109火车摄影</div>
@@ -633,16 +638,28 @@
           var value = $(`[name='${name}']`)[0];
           changeImageWith(value)
         };
-        const name = getParam('name')
+        var name = getParam('name')
         const len = +'10'
-        if (name !== "" && name !== null) {
+        if (name !== "" && name !== null && name !== 'null') {
           changeImageWithName(name)
         } else {
           var value = $(`#0`)[0];
+          name = value.getAttribute('name');
           var v = JSON.parse(value.getAttribute('extra'));
           changeExifData(v);
           imageBox.setAttribute("share", value.getAttribute('share'));
         }
+        $('#download').click(function () {
+          var node = document.getElementById('all-pic');
+          html2canvas(node, {
+            useCORS: true,
+            allowTaint: true,
+            scrollX: 0,
+            scrollY: 0,
+          }).then(function (canvas) {                  
+            simulateDownloadImageClick(canvas.toDataURL('image/png'),  name + '.png');
+          });
+        });        
         // key
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
@@ -679,6 +696,14 @@
         body {
           background-color: #fff;
         }
+
+        .fullscreen-pic {
+          grid-column: span 3 / span 3;
+        }
+
+        .fullscreen-info {
+          grid-column: span 3 / span 3;
+        }        
 
         .album-comment {
           max-width: 800px;
@@ -853,14 +878,6 @@
           .album-item {
             background-color: black;
           }
-        }
-
-        .fullscreen-pic {
-          grid-column: span 3 / span 3;
-        }
-
-        .fullscreen-info {
-          grid-column: span 3 / span 3;
         }
       </style>
 </section>
