@@ -15,7 +15,7 @@ root: /RiGallery
 
 photography_page:
   slogan: true
-  slogan_descr: 'Lost but tranquila in Rivers '
+  slogan_descr: 'Lost but Tranquila in Rivers '
 
 thumbnail_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/
 base_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main
