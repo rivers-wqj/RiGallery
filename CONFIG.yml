@@ -1,8 +1,8 @@
-title: 照片集
-subtitle: Take Photo Think Seriously
-description: 拿起相机，认真思考
+title: Rivrs‘ Gallery
+subtitle: Fling Beauty Eternity
+description: CRY ME A RIVER
 cover: 'https://raw.githubusercontent.com/rivers-wqj/RiGallery/main/PKCity/IMG_4346.2mgyoj22lho0.webp'
-author: WQJ
+author: Rivers
 
 footer_logo: 
   use: self
@@ -15,7 +15,7 @@ root: /RiGallery
 
 photography_page:
   slogan: true
-  slogan_descr: 'The moments when I pressed the shutter, the moments are forever.'
+  slogan_descr: 'Lost in Rivers '
 
 thumbnail_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/
 base_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main
