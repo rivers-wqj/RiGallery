@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>照片集</title>
+  <title>Rivrs‘ Gallery</title>
   
-  <subtitle>Take Photo Think Seriously</subtitle>
+  <subtitle>Fling Beauty Eternity</subtitle>
   <link href="https://rivers-wqj.github.io/RiGallery/atom.xml" rel="self"/>
   
   <link href="https://rivers-wqj.github.io/RiGallery/"/>
-  <updated>2023-11-29T12:09:12.586Z</updated>
+  <updated>2023-11-30T12:02:40.680Z</updated>
   <id>https://rivers-wqj.github.io/RiGallery/</id>
   
   <author>
-    <name>WQJ</name>
+    <name>Rivers</name>
     
   </author>
   
@@ -20,8 +20,8 @@
     <title>照片集</title>
     <link href="https://rivers-wqj.github.io/RiGallery/2023/undefined/"/>
     <id>https://rivers-wqj.github.io/RiGallery/2023/undefined/</id>
-    <published>2023-11-29T12:09:12.586Z</published>
-    <updated>2023-11-29T12:09:12.586Z</updated>
+    <published>2023-11-30T12:02:40.680Z</published>
+    <updated>2023-11-30T12:02:40.680Z</updated>
     
     
     
