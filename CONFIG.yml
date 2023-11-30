@@ -1,4 +1,4 @@
-title: Rivrs‘ Gallery
+title: Rivers‘ Gallery
 subtitle: Fling Beauty Eternity
 description: chill in a river
 cover: 'https://raw.githubusercontent.com/rivers-wqj/RiGallery/main/PKCity/IMG_4346.2mgyoj22lho0.webp'
@@ -15,7 +15,7 @@ root: /RiGallery
 
 photography_page:
   slogan: true
-  slogan_descr: 'Lost in Rivers '
+  slogan_descr: 'Lost but tranquila in Rivers '
 
 thumbnail_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/
 base_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main
