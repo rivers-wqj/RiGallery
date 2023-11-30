@@ -731,95 +731,6 @@
       </div>
     </div>
   </div>
-  <!-- 
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230420haidian.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423haidian.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba1.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230423qijiuba2.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230517panjiayuan.JPG" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230520houhai1.JPG" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum1.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230522zgcforum.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230523beiwucun.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230525zgc.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230527panjiayuan.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230601dior.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609haidian.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230609xiangshan.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230613wukesong.JPG" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230625yuetanpark.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu1.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu2.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu3.JPG" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230628shuangxiu.jpg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-ST/20230630guomei.jpg" as="image" />  
-   -->
   
       </div>
       <script>
@@ -1156,9 +1067,13 @@
 <!-- highlightjs -->
 
 
-<script src="/RiGallery/js/highlight.min.js" async></script>
+<script src="/RiGallery/js/highlight.min.js"></script>
+<script src="/RiGallery/js/highlightjs-line-numbers.min.js"></script>
 
-<script>window.addEventListener('load', () => hljs.initHighlighting());</script>
+<!-- <script>window.addEventListener('load', () => {
+  hljs.highlightAll(); // initialize highlighting
+  hljs.initLineNumbersOnLoad(); // apply line numbering 
+});</script> -->
 <script>
   $("pre.code").each(function() {
     $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");

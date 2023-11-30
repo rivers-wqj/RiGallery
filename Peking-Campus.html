@@ -443,23 +443,6 @@
       </div>
     </div>
   </div>
-  <!-- 
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-Campus/IMG_3323.341785u5fpo0.webp" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-Campus/R0002898.731l67sm3js0.webp" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-Campus/R0002984.3gp6r250o3o0.webp" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Peking-Campus/R0002987.299hazb9cy4g.webp" as="image" />  
-   -->
   
       </div>
       <script>
@@ -796,9 +779,13 @@
 <!-- highlightjs -->
 
 
-<script src="/RiGallery/js/highlight.min.js" async></script>
+<script src="/RiGallery/js/highlight.min.js"></script>
+<script src="/RiGallery/js/highlightjs-line-numbers.min.js"></script>
 
-<script>window.addEventListener('load', () => hljs.initHighlighting());</script>
+<!-- <script>window.addEventListener('load', () => {
+  hljs.highlightAll(); // initialize highlighting
+  hljs.initLineNumbersOnLoad(); // apply line numbering 
+});</script> -->
 <script>
   $("pre.code").each(function() {
     $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");

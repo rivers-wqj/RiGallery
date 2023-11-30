@@ -539,47 +539,6 @@
       </div>
     </div>
   </div>
-  <!-- 
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.jpeg" as="image" />  
-  
-    
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.jpeg" as="image" />  
-   -->
   
       </div>
       <script>
@@ -916,9 +875,13 @@
 <!-- highlightjs -->
 
 
-<script src="/RiGallery/js/highlight.min.js" async></script>
+<script src="/RiGallery/js/highlight.min.js"></script>
+<script src="/RiGallery/js/highlightjs-line-numbers.min.js"></script>
 
-<script>window.addEventListener('load', () => hljs.initHighlighting());</script>
+<!-- <script>window.addEventListener('load', () => {
+  hljs.highlightAll(); // initialize highlighting
+  hljs.initLineNumbersOnLoad(); // apply line numbering 
+});</script> -->
 <script>
   $("pre.code").each(function() {
     $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
