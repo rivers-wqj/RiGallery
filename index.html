@@ -486,12 +486,10 @@
 
 
 <script src="/RiGallery/js/highlight.min.js"></script>
-<script src="/RiGallery/js/highlightjs-line-numbers.min.js"></script>
 
-<!-- <script>window.addEventListener('load', () => {
+<script>window.addEventListener('load', () => {
   hljs.highlightAll(); // initialize highlighting
-  hljs.initLineNumbersOnLoad(); // apply line numbering 
-});</script> -->
+});</script>
 <script>
   $("pre.code").each(function() {
     $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
