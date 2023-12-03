@@ -665,6 +665,9 @@
           <div class="album-share album-tool">
             <iconpark-icon name="down-picture"></iconpark-icon><a id="download" href="javascript:void(0)"> Download </a>
           </div>
+          <div class="album-share album-tool">
+            <iconpark-icon name="save"></iconpark-icon><a id="editor" href="javascript:void(0)"> Editor </a>
+          </div>          
         </div>        
         <div class="album-title">西班牙🇵🇸游行</div>
         <span class="album-subtitle">
@@ -698,9 +701,10 @@
         var normalWrapper = $("#normal-wrapper");
         var normalData = $("#no-exif-data");
         var name = getParam('name');
+        var editor = $("#editor");
         imgno = 0; // 进入页面时，设定初始的图片编号为0 // 定义新变量时不使用 var 则为全局变量、
+        imgLink = imageBox.src;
         function changeExifData(v) {
-          console.log(Object.keys(v.exif_data))
           if (Object.keys(v.exif_data).length === 0) {
             wrapper.hide();
             normalWrapper.show();
@@ -713,7 +717,7 @@
         }
         function changeImageWith(target) {
           imgno = target.getAttribute('id'); 
-          var imgLink = target.getAttribute('rel');
+          imgLink = target.getAttribute('rel');
           name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
           var v = JSON.parse(target.getAttribute('extra'));
@@ -761,7 +765,10 @@
           }).then(function (canvas) {                  
             simulateDownloadImageClick(canvas.toDataURL('image/png'),  name + '.png');
           });
-        });        
+        });   
+        editor.click(function () {
+          window.open('/RiGallery/editor?file=' + imgLink);
+        })     
         // key
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
