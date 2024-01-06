@@ -1,19 +1,24 @@
-博物馆摄影:
+在博物馆:
   url: Museum and Gallery
-  date: 2020-01-11
+  date: 2022-12-12
   cover: Museum and Gallery/R0011272.jpeg
 
-T109火车摄影:
+自行车:
+  url: Bicycle
+  date: 2023-11-01
+  cover: Bicycle/R0012732.jpeg
+
+T109火车:
   url: CR-T109
   date: 2023-01-11
   cover: CR-T109/20230111T109-8.JPG
 
-T145火车摄影:
+T145火车:
   url: CR-T145
   date: 2023-04-28
   cover: CR-T145/20230428T145-1.JPG
 
-北京街头摄影:
+北京街头:
   url: Peking-ST
   date: 2020-09-14
   cover: Peking-ST/20230630guomei.jpg
@@ -43,18 +48,17 @@ T145火车摄影:
   date: 2023-10-4
   cover: Granada人文/1B3F3060-94D2-460B-8AF1-844B729BF5DF.jpeg
 
-
-巴黎:
+巴黎街头:
   url: Paris-ST
   date: 2023-12-21
   cover: Paris-ST/R0011197.jpeg
 
-Self-Portraits:
+自画像Self-Portraits:
   url: SELF-PORTRAITS
   date: 2023-12-21
   cover: SELF-PORTRAITS/R0011915.jpeg
 
-文字:
+文字Writing:
   url: Writing
   date: 2023-12-21
   cover: Writing/R0011950.jpeg
