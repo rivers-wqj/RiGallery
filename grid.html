@@ -239,11 +239,6 @@
         
       </div>
     </div>
-    <script>
-      $(function() {
-        $("div.lazy").lazyload();
-      });
-    </script>
     <script type="module">
       var grid = document.getElementById("grid");
       var name = getParam('name');
@@ -251,7 +246,7 @@
       const all = await response.json();
       for (const key of Object.keys(all)) {
         var v = all[key];
-        if (v.dir !== name) {
+        if ((name !== null) && v.dir !== name) {
           continue
         }
         var d = document.createElement('div');
@@ -263,6 +258,9 @@
         a.appendChild(d);
         grid.appendChild(a);
       }
+      $(function() {
+        $("div.lazy").lazyload();
+      });
     </script>
     <style>
       body {
