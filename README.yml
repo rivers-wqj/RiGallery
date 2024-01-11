@@ -1,34 +1,34 @@
-IN Museum&Gallery:
+在文馆IN Museum&Gallery:
   url: Museum&Gallery
   date: 2022-12-12
   cover: Museum&Gallery/R0011272.jpeg
 
-Bicycle自行车:
+自行车Bicycle:
   url: Bicycle
   date: 2023-11-01
   cover: Bicycle/R0012732.jpeg
 
-T109火车:
+火车IN CRT109:
   url: CR-T109
   date: 2023-01-11
   cover: CR-T109/20230111T109-8.JPG
 
-T145火车:
+火车IN CRT145:
   url: CR-T145
   date: 2023-04-28
   cover: CR-T145/20230428T145-1.JPG
 
-北京街头:
+北京街头PekingST:
   url: Peking-ST
   date: 2020-09-14
   cover: Peking-ST/20230630guomei.jpg
   
-北大校园:
+北大校园PKU:
   url: Peking-Campus
   date: 2023-03-26
   cover: Peking-Campus/R0002987.299hazb9cy4g.webp
   
-北京:
+北京印象Peking-City:
   url: Peking-City
   date: 2022-10-01
   cover: Peking-City/IMG_4317.5l08gas8f6k0.webp
@@ -38,12 +38,12 @@ T145火车:
   date: 2023-10-29
   cover: Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg
 
-Granada-City:
+格拉纳达Granada-City:
   url: Granada-City
   date: 2023-10-4
   cover: Granada-City/4DDDE902-08A2-49BB-94C5-D62A4F598DE7_1_105_c.jpeg
 
-格村街头Granada-ST:
+格拉纳达街头Granada-ST:
   url: Granada-ST
   date: 2023-10-4
   cover: Granada-ST/1B3F3060-94D2-460B-8AF1-844B729BF5DF.jpeg
