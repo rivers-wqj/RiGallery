@@ -946,7 +946,7 @@
           });
         });   
         editor.click(function () {
-          window.open('/RiGallery/editor?file=' + imgLink);
+          window.open('/RiGallery/editor?file=' + encodeURIComponent(imgLink));
         })     
         // key
         window.onkeydown = function album_hotkey() {
@@ -980,7 +980,7 @@
           copyToClipboard('https://rivers-wqj.github.io/RiGallery/' + "photo?name=" + imageBox.getAttribute('share'));
         });
         $("#grid").on('click', function() {
-          window.open('/RiGallery/grid?name=Granada-City');
+          window.open('/RiGallery/grid?name=' + encodeURIComponent('Granada-City'));
         });
       </script>
       <style>

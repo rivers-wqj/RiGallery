@@ -770,7 +770,7 @@
           });
         });   
         editor.click(function () {
-          window.open('/RiGallery/editor?file=' + imgLink);
+          window.open('/RiGallery/editor?file=' + encodeURIComponent(imgLink));
         })     
         // key
         window.onkeydown = function album_hotkey() {
@@ -804,7 +804,7 @@
           copyToClipboard('https://rivers-wqj.github.io/RiGallery/' + "photo?name=" + imageBox.getAttribute('share'));
         });
         $("#grid").on('click', function() {
-          window.open('/RiGallery/grid?name=Spain-🇵🇸游行');
+          window.open('/RiGallery/grid?name=' + encodeURIComponent('Spain-🇵🇸游行'));
         });
       </script>
       <style>
