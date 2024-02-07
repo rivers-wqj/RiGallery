@@ -875,6 +875,8 @@
         .album-item {
           background-color: black;
           aspect-ratio: 1 / 1;
+          border: 0.8px solid black;
+          border-radius: 2px;
           min-height: 100px;
           min-width: 100px;
           background-size: cover;
@@ -940,10 +942,6 @@
           .default-pic {
             grid-column: span 2 / span 2;
           }
-
-          .album-info {
-            grid-column: span 1 / span 1;
-          }
         }
 
         @media (min-width: 1304px) {
@@ -976,6 +974,10 @@
 
           .album-item {
             background-color: black;
+          }
+
+          .album-item {
+            border: 0.8px solid white;
           }
         }
       </style>
