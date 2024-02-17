@@ -1,7 +1,12 @@
-在文馆IN Museum:
+在文馆IN Museums:
   url: Museum
   date: 2022-12-12
   cover: Museum/R0011272.jpeg
+
+在公园IN Parks:
+  url: Parks
+  date: 2024-02-14
+  cover: Parks/IMG_1080.jpeg.jpeg
 
 文字Writing:
   url: Writing
@@ -23,15 +28,25 @@
   date: 2023-04-28
   cover: CR-T145/20230428T145-1.JPG
 
-格拉纳达街头Granada-ST:
-  url: Granada-ST
-  date: 2023-10-4
-  cover: Granada-ST/R0010737.jpeg
+葡萄牙街头Portugal-ST
+  url: Portugal
+  date: 2024-02-11
+  cover: Portugal/IMG_1438.jpeg
 
 巴黎街头Paris-ST:
   url: Paris-ST
   date: 2023-12-21
   cover: Paris-ST/R0011197.jpeg
+
+意大利街头Italy-ST:
+  url: Italy
+  date: 2024-01-01
+  cover: Italy/R0012276.jpeg
+
+格拉纳达街头Granada-ST:
+  url: Granada-ST
+  date: 2023-10-4
+  cover: Granada-ST/R0010737.jpeg
 
 北京街头Peking-ST:
   url: Peking-ST
@@ -52,11 +67,6 @@
   url: Granada-City
   date: 2023-10-4
   cover: Granada-City/4DDDE902-08A2-49BB-94C5-D62A4F598DE7_1_105_c.jpeg
-
-意大利Italy:
-  url: Italy
-  date: 2024-01-01
-  cover: Italy/R0012276.jpeg
 
 自画像Self-Portraits:
   url: SELF-PORTRAITS
