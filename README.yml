@@ -18,6 +18,11 @@
   date: 2023-11-01
   cover: Bicycle/R0012732.jpeg
 
+爱人Couple:
+  url: Couple
+  date: 2023-04-13
+  cover: Bicycle/R0012732.jpeg
+
 火车IN CRT109:
   url: CR-T109
   date: 2023-01-11
@@ -27,6 +32,12 @@
   url: CR-T145
   date: 2023-04-28
   cover: CR-T145/20230428T145-1.JPG
+
+
+瑞士街头Switzerland-ST:
+  url: Switzerland
+  date: 2024-03-27
+  cover: Switzerland/IMG_1438.jpeg
 
 葡萄牙街头Portugal-ST:
   url: Portugal
