@@ -213,6 +213,30 @@
   
   <!--只在 **非文章** 页面显示-->
   
+  <a class="itp-float-bar-item rounded" href="/RiGallery/location" title="地图">
+    
+    <iconpark-icon class="navicon" name="local-two"></iconpark-icon>
+    
+  </a>
+  
+  <a class="itp-float-bar-item rounded" href="/RiGallery/grid-all" title="时间线">
+    
+    <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
+    
+  </a>
+  
+  <a class="itp-float-bar-item rounded" href="/RiGallery/status" title="状态监控">
+    
+    <iconpark-icon class="navicon" name="list-view"></iconpark-icon>
+    
+  </a>
+  
+  <a class="itp-float-bar-item rounded" href="/RiGallery/random" title="随机">
+    
+    <iconpark-icon class="navicon" name="pic"></iconpark-icon>
+    
+  </a>
+  
   
   
 
@@ -279,7 +303,7 @@ SELECT IFNULL(EXIFData.maker, 'NONE') AS maker, COUNT(*) AS count
 FROM Photo
 LEFT OUTER JOIN EXIFData ON Photo.exif_data_id = EXIFData.id
 GROUP BY maker
-ORDER BY COUNT(*) DESC;
+ORDER BY count DESC;
 `,
             ...params,
         );
@@ -297,7 +321,7 @@ limit 10;
         queryTable(
             ['Location'],
 `
-SELECT country, COUNT(*) as count 
+SELECT IFNULL(country, 'NONE') as country, COUNT(*) as count 
 FROM location 
 GROUP BY country
 ORDER BY COUNT(*) DESC;
