@@ -1,12 +1,12 @@
 在文馆IN Museums:
-  url: Museum
+  url: In Museums
   date: 2022-12-12
-  cover: Museum/R0011272.jpeg
+  cover: In Museums/R0011272.jpeg
 
 在公园IN Parks:
-  url: Parks
+  url: In Parks
   date: 2024-02-14
-  cover: Parks/IMG_1080.jpeg
+  cover: In Parks/IMG_1080.jpeg
 
 文字Writing:
   url: Writing
@@ -32,7 +32,6 @@
   url: CR-T145
   date: 2023-04-28
   cover: CR-T145/20230428T145-1.JPG
-
 
 瑞士街头Switzerland-ST:
   url: Switzerland
@@ -90,9 +89,39 @@
   cover: SELF-PORTRAITS/R0011915.jpeg
 
 小渔村Hometown:
-  url: 永远的故乡
+  url: Home Forever
   date: 1997-06-16
-  cover: 永远的故乡/IMG_0319.jpeg
+  cover: Home Forever/IMG_0319.jpeg
+
+苏州园林Suzhou Garden:
+  url: Suzhou Garden
+  date: 2020-01-01
+  cover: Suzhou Garden/R0016691.jpeg
+
+废弃The Abandoned:
+  url: The Abandoned
+  date: 2020-01-01
+  cover: The Abandoned/R0016907.jpeg
+
+建设者Laborer:
+  url: Laborer
+  date: 2020-01-01
+  cover: Laborer/R0016575.jpeg
+
+小孩Kids:
+  url: Kids
+  date: 2020-01-01
+  cover: Kids/R0016757.jpeg
+
+公交上On Public Transportation:
+  url: On Public Transportation
+  date: 2020-01-01
+  cover: On Public Transportation/R0016161.jpeg
+
+风花雪月Wind&Rain:
+  url: Wind&Rain
+  date: 2020-01-01
+  cover: Wind&Rain/R0016790.jpeg
 
 北大校园PKU:
   url: Peking-Campus
