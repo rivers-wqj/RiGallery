@@ -19,3 +19,21 @@ photography_page:
 
 thumbnail_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/
 base_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main
+
+nav:
+  地图:
+    link: /RiGallery/location
+    icon: local-two
+  随机:
+    link: /RiGallery/random
+    icon: pic
+  # 查询:
+  #   link: /RiGallery/query
+  #   icon: history-query
+  状态监控:
+    link: /RiGallery/status
+    icon: list-view
+  时间线:
+    link: /RiGallery/grid-all
+    icon: grid-nine
+
