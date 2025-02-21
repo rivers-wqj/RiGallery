@@ -416,7 +416,7 @@
             border-color: white;
         }        
     }
-</style>  
+</style>
       </div>
       <p id="descbox" class="text-center text-xs hint-text" hidden>  </p>
       <div class="album-list flex gap-2">
@@ -594,11 +594,11 @@ The workers are positioned at various locations within the park, with one worker
           </div>
           <div class="album-share album-tool">
             <iconpark-icon name="save"></iconpark-icon><a id="editor" href="javascript:void(0)"> Editor </a>
-          </div>     
+          </div>
           <div class="album-share album-tool">
             <iconpark-icon name="grid-nine"></iconpark-icon><a id="grid" href="javascript:void(0)"> Grid </a>
-          </div>        
-        </div>        
+          </div>
+        </div>
         <div class="album-title">建设者Laborer</div>
         <span class="album-subtitle">
           
@@ -704,13 +704,13 @@ The workers are positioned at various locations within the park, with one worker
             allowTaint: true,
             scrollX: 0,
             scrollY: 0,
-          }).then(function (canvas) {                  
+          }).then(function (canvas) {
             simulateDownloadImageClick(canvas.toDataURL('image/png'),  name + '.png');
           });
-        });   
+        });
         editor.click(function () {
           window.open('https://rivers-wqj.github.io/RiGallery/editor?file=' + encodeURIComponent(imgLink));
-        })     
+        })
         // key
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
@@ -739,7 +739,7 @@ The workers are positioned at various locations within the park, with one worker
           };
         };
         $("#share").on('click', function() {
-          var imageBox = document.getElementById("imgbox"); 
+          var imageBox = document.getElementById("imgbox");
           copyToClipboard('https://rivers-wqj.github.io/RiGallery/' + "photo?name=" + imageBox.getAttribute('share'));
         });
         $("#grid").on('click', function() {
@@ -757,7 +757,7 @@ The workers are positioned at various locations within the park, with one worker
 
         .fullscreen-info {
           grid-column: span 3 / span 3;
-        }        
+        }
 
         .album-comment {
           max-width: 800px;
@@ -872,6 +872,10 @@ The workers are positioned at various locations within the park, with one worker
 
           .wrapper {
             padding: 8px;
+          }
+
+          iframe {
+            max-width: 100%;
           }
         }
 
