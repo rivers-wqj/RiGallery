@@ -262,12 +262,13 @@
 </style>
   <!-- Main Content -->
   <script src="js/html2canvas.js"></script>
+<script src="js/mini-live-photo.js"></script>
 <section class="pjax-area">
   <div class="content-area post-album default-content-area">
     <div class="grid grid-cols-3">
       <div class="default-pic gap-2 wrapper">
         <div id="all-pic" class="pic-area">
-          <div class="pic-item" />
+          <div id="pic-g" class="pic-item" />
           <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.jpeg" />
         </div>
         <div id="exif-wrapper" class="pic-wrapper">
@@ -350,7 +351,7 @@
     @media (max-width: 768px) {
         .pic-wrapper {
             padding: 4px 0px;
-        }        
+        }
 
         #exif-param {
             font-size: .5rem;
@@ -374,12 +375,12 @@
         }
     }
 
-    .apple-logo, 
-    .ricoh-logo, 
+    .apple-logo,
+    .ricoh-logo,
     .fujifilm-logo {
         height: 40px;
     }
-    
+
     .nikon-logo {
         height: 50px;
     }
@@ -392,10 +393,10 @@
     .dji-logo {
         width: 60px;
     }
-    
+
     @media (max-width: 768px) {
-        .apple-logo, 
-        .ricoh-logo, 
+        .apple-logo,
+        .ricoh-logo,
         .nikon-logo,
         .fujifilm-logo {
             height: 30px;
@@ -414,8 +415,47 @@
             border-width: thin;
             background-color: white;
             border-color: white;
-        }        
+        }
     }
+
+.mlp-wrap {
+    overflow: hidden;
+    border-radius: inherit;    /* 如果父级有圆角，继承一下更自然 */
+}
+
+.mlp-wrap, [data-livephoto] { position: relative; overflow: hidden; border-radius: inherit; }
+
+/* 初始隐藏视频，启用硬件合成避免闪烁 */
+.mlp-wrap .mlp-video, [data-livephoto] .mlp-video{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  opacity:0; transition:opacity .18s ease, transform .25s ease;
+  will-change: opacity, transform; pointer-events:none;
+}
+
+/* “首帧就绪”后，允许显示（只把不透明度交给 JS 控） */
+.mlp-wrap.is-prepped .mlp-video,
+[data-livephoto].is-prepped .mlp-video{ opacity:0; }
+
+/* 开始播放时再交叉淡入 */
+.mlp-wrap.is-playing .mlp-video,
+[data-livephoto].is-playing .mlp-video{ opacity:1; }
+
+/* （可选）缩放动画 */
+.mlp-wrap.is-zoom .mlp-video,
+[data-livephoto].is-zoom .mlp-video{ transform: scale(1.04); }
+
+[data-livephoto].is-playing {
+  -webkit-touch-callout: none;
+  user-select: none;
+  touch-action: none;
+}
+
+/* 禁止浏览器把 img/video 当成可拖拽对象 */
+[data-livephoto] img,
+[data-livephoto] video {
+  -webkit-user-drag: none;
+  user-drag: none; /* 非标准，但部分浏览器支持 */
+}
 </style>
       </div>
       <p id="descbox" class="text-center text-xs hint-text" hidden>  </p>
@@ -431,13 +471,16 @@
           
           
           
+          
           <a class="album-item lazy" id="0"
             name="1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5 ISO 800 35mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:35:26","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5","EXIF FocalLength":"35mm","EXIF ISOSpeedRatings":"ISO 800","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c","path":"Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/1C52A191-C105-401A-93C6-E2915B7AD366_1_105_c.webp"
             aria-label="the photo 0"></a>
+          
           
           
           
@@ -453,9 +496,11 @@
             name="02C864D2-3A35-453E-8AA6-537F93614CCE" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F4.5 ISO 160 42mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:24:15","EXIF ExposureTime":"1/250s","EXIF FNumber":"F4.5","EXIF FocalLength":"42mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"02C864D2-3A35-453E-8AA6-537F93614CCE","path":"Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/02C864D2-3A35-453E-8AA6-537F93614CCE.webp"
             aria-label="the photo 1"></a>
+          
           
           
           
@@ -471,9 +516,11 @@
             name="3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F4.5 ISO 1250 35mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:31:39","EXIF ExposureTime":"1/250s","EXIF FNumber":"F4.5","EXIF FocalLength":"35mm","EXIF ISOSpeedRatings":"ISO 1250","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c","path":"Spain-🇵🇸游行/3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/3C1A2934-9485-4DC5-90A9-FD77280A72EA_1_105_c.webp"
             aria-label="the photo 2"></a>
+          
           
           
           
@@ -489,9 +536,11 @@
             name="3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 1000 69mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:30:02","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"69mm","EXIF ISOSpeedRatings":"ISO 1000","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c","path":"Spain-🇵🇸游行/3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/3F76049E-8B7D-4502-97A9-86D77C5FBBEB_1_105_c.webp"
             aria-label="the photo 3"></a>
+          
           
           
           
@@ -507,9 +556,11 @@
             name="8FB9C986-6BCA-4A4C-AEFB-11642B4E826F" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5 ISO 160 18mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:28:25","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5","EXIF FocalLength":"18mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"8FB9C986-6BCA-4A4C-AEFB-11642B4E826F","path":"Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.webp"
             aria-label="the photo 4"></a>
+          
           
           
           
@@ -525,9 +576,11 @@
             name="9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F4 ISO 640 24mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:32:31","EXIF ExposureTime":"1/250s","EXIF FNumber":"F4","EXIF FocalLength":"24mm","EXIF ISOSpeedRatings":"ISO 640","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c","path":"Spain-🇵🇸游行/9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/9DB12ADD-589A-45D0-8433-72408B0BEB52_1_105_c.webp"
             aria-label="the photo 5"></a>
+          
           
           
           
@@ -543,9 +596,11 @@
             name="26AF100A-5589-4378-94D6-432999F63394_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/26AF100A-5589-4378-94D6-432999F63394_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/26AF100A-5589-4378-94D6-432999F63394_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 800 69mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:31:47","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"69mm","EXIF ISOSpeedRatings":"ISO 800","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"26AF100A-5589-4378-94D6-432999F63394_1_105_c","path":"Spain-🇵🇸游行/26AF100A-5589-4378-94D6-432999F63394_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/26AF100A-5589-4378-94D6-432999F63394_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/26AF100A-5589-4378-94D6-432999F63394_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/26AF100A-5589-4378-94D6-432999F63394_1_105_c.webp"
             aria-label="the photo 6"></a>
+          
           
           
           
@@ -561,9 +616,11 @@
             name="77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5 ISO 640 50mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:33:34","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5","EXIF FocalLength":"50mm","EXIF ISOSpeedRatings":"ISO 640","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c","path":"Spain-🇵🇸游行/77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/77ACF52C-2346-461C-B00A-E53CF1339B81_1_105_c.webp"
             aria-label="the photo 7"></a>
+          
           
           
           
@@ -579,9 +636,11 @@
             name="94DC441D-38FD-4ABF-A6B4-BF51D206B65B" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 160 76mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:27:17","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"76mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"94DC441D-38FD-4ABF-A6B4-BF51D206B65B","path":"Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/94DC441D-38FD-4ABF-A6B4-BF51D206B65B.webp"
             aria-label="the photo 8"></a>
+          
           
           
           
@@ -597,9 +656,11 @@
             name="5837E50F-2C13-457B-AC22-5C86562948A9" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 160 81mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:25:26","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"81mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"5837E50F-2C13-457B-AC22-5C86562948A9","path":"Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/5837E50F-2C13-457B-AC22-5C86562948A9.webp"
             aria-label="the photo 9"></a>
+          
           
           
           
@@ -615,9 +676,11 @@
             name="044815B5-5713-48D0-AE2B-5175D1D964E9" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F4.5 ISO 160 35mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:31:12","EXIF ExposureTime":"1/250s","EXIF FNumber":"F4.5","EXIF FocalLength":"35mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"044815B5-5713-48D0-AE2B-5175D1D964E9","path":"Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/044815B5-5713-48D0-AE2B-5175D1D964E9.webp"
             aria-label="the photo 10"></a>
+          
           
           
           
@@ -633,9 +696,11 @@
             name="248661BB-6195-4AED-ACD8-62B6F7F20AC6" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5 ISO 160 50mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:28:43","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5","EXIF FocalLength":"50mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"248661BB-6195-4AED-ACD8-62B6F7F20AC6","path":"Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/248661BB-6195-4AED-ACD8-62B6F7F20AC6.webp"
             aria-label="the photo 11"></a>
+          
           
           
           
@@ -651,9 +716,11 @@
             name="21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 800 100mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:38:03","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"100mm","EXIF ISOSpeedRatings":"ISO 800","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c","path":"Spain-🇵🇸游行/21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/21806960-0EC9-4171-9871-D357A5AFD4E6_1_105_c.webp"
             aria-label="the photo 12"></a>
+          
           
           
           
@@ -669,9 +736,11 @@
             name="94589079-E1AA-4904-A148-406FB383A7A3_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/94589079-E1AA-4904-A148-406FB383A7A3_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/94589079-E1AA-4904-A148-406FB383A7A3_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5 ISO 800 50mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:33:19","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5","EXIF FocalLength":"50mm","EXIF ISOSpeedRatings":"ISO 800","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"94589079-E1AA-4904-A148-406FB383A7A3_1_105_c","path":"Spain-🇵🇸游行/94589079-E1AA-4904-A148-406FB383A7A3_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/94589079-E1AA-4904-A148-406FB383A7A3_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/94589079-E1AA-4904-A148-406FB383A7A3_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/94589079-E1AA-4904-A148-406FB383A7A3_1_105_c.webp"
             aria-label="the photo 13"></a>
+          
           
           
           
@@ -687,9 +756,11 @@
             name="A06BC711-01E2-4BC8-B65D-08028CFAA5FA" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 160 110mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:26:46","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"110mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"A06BC711-01E2-4BC8-B65D-08028CFAA5FA","path":"Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/A06BC711-01E2-4BC8-B65D-08028CFAA5FA.webp"
             aria-label="the photo 14"></a>
+          
           
           
           
@@ -705,9 +776,11 @@
             name="C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F4 ISO 400 19mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:11:12 20:32:28","EXIF ExposureTime":"1/250s","EXIF FNumber":"F4","EXIF FocalLength":"19mm","EXIF ISOSpeedRatings":"ISO 400","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c","path":"Spain-🇵🇸游行/C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/C6C98B69-1FA0-4C80-9FF3-D7FD8131F9C0_1_105_c.webp"
             aria-label="the photo 15"></a>
+          
           
           
           
@@ -723,9 +796,11 @@
             name="C70A4F0B-DA5D-418A-8A94-6C37B9E63192" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 160 79mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:34:34","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"79mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"C70A4F0B-DA5D-418A-8A94-6C37B9E63192","path":"Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/C70A4F0B-DA5D-418A-8A94-6C37B9E63192.webp"
             aria-label="the photo 16"></a>
+          
           
           
           
@@ -741,9 +816,11 @@
             name="CA857673-C2AF-471C-87D7-77B5BE072D18" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5.6 ISO 160 78mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:29:53","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5.6","EXIF FocalLength":"78mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"CA857673-C2AF-471C-87D7-77B5BE072D18","path":"Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/CA857673-C2AF-471C-87D7-77B5BE072D18.webp"
             aria-label="the photo 17"></a>
+          
           
           
           
@@ -759,9 +836,11 @@
             name="FBBC618E-6D18-4583-9C15-FF96DEFDBF28" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"Canon Canon EOS 80D 1/250s F5 ISO 160 64mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2023:10:29 22:31:58","EXIF ExposureTime":"1/250s","EXIF FNumber":"F5","EXIF FocalLength":"64mm","EXIF ISOSpeedRatings":"ISO 160","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"FBBC618E-6D18-4583-9C15-FF96DEFDBF28","path":"Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/FBBC618E-6D18-4583-9C15-FF96DEFDBF28.webp"
             aria-label="the photo 18"></a>
+          
           
           
           
@@ -777,6 +856,7 @@
             name="R0013192" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/R0013192.jpeg"
             desc=" - · - "
             share="Spain-🇵🇸游行/R0013192.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Spain-🇵🇸游行","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/250s F11 ISO 200 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:02:28 14:35:58","EXIF ExposureTime":"1/250s","EXIF FNumber":"F11","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0013192","path":"Spain-🇵🇸游行/R0013192.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/R0013192.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Spain-🇵🇸游行/R0013192.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Spain-🇵🇸游行/R0013192.webp"
             aria-label="the photo 19"></a>
@@ -854,6 +934,7 @@
           name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
           var thum = target.getAttribute('data-src');
+          var video = target.getAttribute('video');
           var v = JSON.parse(target.getAttribute('extra'));
           imageBox.src = thum;
           imageBox.classList.add('blur');
@@ -867,6 +948,9 @@
           imageBox.setAttribute("share", target.getAttribute('share'));
           var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
           imageFancy.setAttribute("href", imgLink);
+
+          var picg = document.getElementById('pic-g');
+          attachLivePhoto(picg, video !== '', video);
           var fancyBoxImage = document.getElementsByClassName("fancybox__image")[0];
           if (fancyBoxImage !== undefined) {
             fancyBoxImage.src = imgLink;
@@ -1151,6 +1235,7 @@
             border: 0.8px solid white;
           }
         }
+
       </style>
 </section>
   <!-- Footer -->
