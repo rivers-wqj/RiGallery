@@ -98,6 +98,11 @@
   date: 2020-01-01
   cover: Suzhou Garden/R0016691.jpeg
 
+海南HaiNan
+  url: HaiNan
+  date: 2025-01-05
+  cover: HaiNan/IMG_2891.jpeg
+
 废弃The Abandoned:
   url: The Abandoned
   date: 2020-01-01
@@ -133,4 +138,8 @@ UK:
   date: 2021-12-12
   cover: UK/R0003209.jpeg
 
+日落Sunset:
+  url: Sunset
+  date: 2020-01-01
+  cover: Sunset/IMG_3307.JPG
 
