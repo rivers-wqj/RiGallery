@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "description": "动物图片索引 — 按动物种类归档，值为文件路径列表",
+    "format": "folder/filename.ext",
+    "generated": "2026-04-30",
+    "status": "Initial full scan of 349 images using origin/thumbnail contact sheets; only clear real animals are indexed."
+  },
+  "家犬 / Domestic Dog (Canis lupus familiaris)": [
+    "Couple/R0014848.jpeg",
+    "In Museums/IMG_2059.jpeg",
+    "In Parks/DSCF3448.jpeg"
+  ],
+  "蝴蝶（未定种）/ Butterfly sp. (Lepidoptera sp.)": [
+    "HaiNan/IMG_2927.jpeg"
+  ],
+  "鸭科家禽 / Domestic Waterfowl (Anatidae domestic forms)": [
+    "Home Forever/IMG_0319.jpeg"
+  ],
+  "绵羊 / Domestic Sheep (Ovis aries)": [
+    "Iceland/IMG_5433.jpeg",
+    "UK/R0004650.jpeg"
+  ],
+  "原鸽/家鸽 / Rock Pigeon (Columba livia)": [
+    "In Parks/IMG_2682.jpeg",
+    "Italy/R0012505.jpeg",
+    "Writing/R0013174.jpeg"
+  ],
+  "鸥属（未定种）/ Gull sp. (Larus sp.)": [
+    "Italy/R0012678.jpeg"
+  ],
+  "中华田园猫·白色双色 / Chinese Domestic Cat (White Bicolor)": [
+    "Portugal/IMG_1449.jpeg"
+  ],
+  "锦鲤 / Ornamental Koi (Cyprinus rubrofuscus)": [
+    "SELF-PORTRAITS/R0013099.jpeg"
+  ],
+  "家牛 / Domestic Cattle (Bos taurus)": [
+    "UK/R0004760.jpeg"
+  ]
+}
