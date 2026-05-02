@@ -1,4 +1,5 @@
-在文馆IN Museums:
+# --- 严格对齐仓库文件夹名的配置 ---
+在文馆IN Museum:
   url: Museum
   date: 2022-12-12
   cover: Museum/R0011272.jpeg
@@ -6,7 +7,7 @@
 在公园IN Parks:
   url: In Parks
   date: 2024-02-14
-  cover: In Parks/cover.jpg
+  cover: In Parks/add.jpg
 
 文字Writing:
   url: Writing
@@ -33,35 +34,15 @@
   date: 2023-04-28
   cover: CRT145/20230428T145-1.JPG
 
-瑞士街头Switzerland-ST:
-  url: Switzerland
-  date: 2024-03-27
-  cover: Switzerland/cover.jpg
-
-葡萄牙街头Portugal-ST:
-  url: Portugal
-  date: 2024-02-11
-  cover: Portugal/cover.jpg
+格拉纳达街头Granada-ST:
+  url: Granada-ST
+  date: 2023-10-04
+  cover: Granada-ST/R0010737.jpeg
 
 巴黎街头Paris-ST:
   url: Paris-ST
   date: 2023-12-21
   cover: Paris-ST/R0011197.jpeg
-
-意大利街头Italy-ST:
-  url: Italy
-  date: 2024-01-01
-  cover: Italy/R0012276.jpeg
-
-冰岛Iceland:
-  url: Iceland
-  date: 2024-05-30
-  cover: Iceland/cover.jpg
-
-格拉纳达街头Granada-ST:
-  url: Granada-ST
-  date: 2023-10-04
-  cover: Granada-ST/R0010737.jpeg
 
 北京街头Peking-ST:
   url: Peking-ST
@@ -73,11 +54,11 @@
   date: 2022-10-01
   cover: Peking-City/IMG_4317.5l08gas8f6k0.webp
 
-西班牙游行SpainParade:
+西班牙Spain-Parade:
   url: Spain-Parade
   date: 2023-10-29
-  cover: Spain-Parade/CA857673-C2AF-471C-87D7-77B5BE072D18.jpeg
-  
+  cover: Spain-Parade/cover.jpg
+
 格拉纳达Granada-City:
   url: Granada-City
   date: 2023-10-04
@@ -89,9 +70,9 @@
   cover: SELF-PORTRAITS/R0011915.jpeg
 
 小渔村Hometown:
-  url: Home Forever
+  url: Hometown
   date: 1997-06-16
-  cover: Home Forever/IMG_0319.jpeg
+  cover: Hometown/IMG_0319.jpeg
 
 苏州园林Suzhou Garden:
   url: Suzhou Garden
@@ -143,7 +124,6 @@ UK:
   date: 2020-01-01
   cover: Sunset/cover.jpg
 
-# --- 你要新增的相册 ---
 胡志明Saigon:
   url: HoChiMinh
   date: 2026-04-28
