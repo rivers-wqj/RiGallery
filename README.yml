@@ -22,11 +22,11 @@
 火车IN CRT109:
   url: CRT109
   date: "2023-01-11"
-  cover: CRT109/20230111T109-8.JPG
+  cover: CRT109/20230111T109-8.webp
 火车IN CRT145:
   url: CRT145
   date: "2023-04-28"
-  cover: CRT145/20230428T145-1.JPG
+  cover: CRT145/20230428T145-1.webp
 格拉纳达街头Granada-ST:
   url: Granada-ST
   date: "2023-10-04"
@@ -112,4 +112,4 @@ UK:
 胡志明Saigon:
   url: HoChiMinh
   date: "2026-04-28"
-  cover: HoChiMinh/R0017450.JPG
+  cover: HoChiMinh/R0017450.webp
