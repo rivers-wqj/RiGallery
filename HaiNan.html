@@ -33,7 +33,7 @@
   
   <!--Page Cover-->
   
-  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//HaiNan/cover.webp" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//HaiNan/IMG_2962.webp" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- Title -->
@@ -214,27 +214,33 @@
   <!--只在 **非文章** 页面显示-->
   
   
-  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-0" href="/RiGallery/location" title="地图">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-0" href="/location" title="地图">
     
     <iconpark-icon class="navicon" name="local-two"></iconpark-icon>
     
   </a>
   
-  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-1" href="/RiGallery/random" title="随机">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-1" href="/grid-lanes" title="时间线">
+    
+    <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
+    
+  </a>
+  
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-2" href="/random" title="随机">
     
     <iconpark-icon class="navicon" name="pic"></iconpark-icon>
     
   </a>
   
-  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-2" href="/RiGallery/status" title="状态监控">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-3" href="/animals" title="动物">
     
-    <iconpark-icon class="navicon" name="list-view"></iconpark-icon>
+    <iconpark-icon class="navicon" name="cat"></iconpark-icon>
     
   </a>
   
-  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-3" href="/RiGallery/grid-all" title="时间线">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-4" href="/RiGallery/status" title="状态监控">
     
-    <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
+    <iconpark-icon class="navicon" name="list-view"></iconpark-icon>
     
   </a>
   
@@ -264,9 +270,14 @@
   <div class="itp-nav-sheet-handle"></div>
   <div class="itp-nav-sheet-grid">
     
-    <a class="itp-nav-sheet-item" href="/RiGallery/grid-all">
-      <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
-      <span>时间线</span>
+    <a class="itp-nav-sheet-item" href="/animals">
+      <iconpark-icon class="navicon" name="cat"></iconpark-icon>
+      <span>动物</span>
+    </a>
+    
+    <a class="itp-nav-sheet-item" href="/RiGallery/status">
+      <iconpark-icon class="navicon" name="list-view"></iconpark-icon>
+      <span>状态监控</span>
     </a>
     
   </div>
@@ -376,9 +387,9 @@
   <script src="js/html2canvas.min.js" defer></script>
 <script src="js/mini-live-photo.js"></script>
 <section class="pjax-area">
-  <div class="content-area post-album default-content-area">
+  <div class="content-area post-album fullscreen-content-area">
     <div class="grid grid-cols-3">
-      <div class="default-pic gap-2 wrapper">
+      <div class="fullscreen-pic gap-2 wrapper">
         <div id="all-pic" class="pic-area">
           <div id="pic-g" class="pic-item" />
           <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//HaiNan/IMG_2891.webp" />
@@ -802,7 +813,7 @@
       </div>
       <div class="text-center text-xs pt-2 hint-text"> </div>
     </div>
-    <div class="album-info default-info">
+    <div class="album-info fullscreen-info">
       <div class="album-info-main">
         <div class="album-info-btm">
           
@@ -831,7 +842,7 @@
           
         </span>
       </div>
-      <div class="album-article article default-article">
+      <div class="album-article article fullscreen-article">
         
       </div>
     </div>
