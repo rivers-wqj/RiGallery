@@ -22,7 +22,7 @@
   <meta name="author" content="Rivers">
   
   <!--Open Graph Title-->
-  <meta property="og:title" content="在文馆IN Museums" />
+  <meta property="og:title" content="在文馆IN Museum" />
   <!--Open Graph Description-->
   <meta property="og:description" content="chill in a river" />
   <!--Open Graph Site Name-->
@@ -38,7 +38,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- Title -->
   
-  <title>在文馆IN Museums - Rivers‘ Gallery</title>
+  <title>在文馆IN Museum - Rivers‘ Gallery</title>
   <!-- 添加到主屏后的标题（iOS 6 新增） -->
   <meta name="apple-mobile-web-app-title" content="Rivers‘ Gallery">
   <!-- 是否启用 WebApp 全屏模式 -->
@@ -69,7 +69,7 @@
   <!-- https://material.io/resources/icons/?style=outline -->
   
   
-  <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_29703_16.0f9623ad85e64efb07f6dddba36807a6.js"></script>
+  <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_29703_20.a16abc3c381b339cccd05404911bbf44.js"></script>
   
   
 <style>
@@ -213,27 +213,35 @@
   
   <!--只在 **非文章** 页面显示-->
   
-  <a class="itp-float-bar-item rounded" href="/RiGallery/location" title="地图">
+  
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-0" href="/RiGallery/location" title="地图">
     
     <iconpark-icon class="navicon" name="local-two"></iconpark-icon>
     
   </a>
   
-  <a class="itp-float-bar-item rounded" href="/RiGallery/grid-all" title="时间线">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-1" href="/RiGallery/random" title="随机">
     
-    <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
+    <iconpark-icon class="navicon" name="pic"></iconpark-icon>
     
   </a>
   
-  <a class="itp-float-bar-item rounded" href="/RiGallery/status" title="状态监控">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-2" href="/RiGallery/status" title="状态监控">
     
     <iconpark-icon class="navicon" name="list-view"></iconpark-icon>
     
   </a>
   
-  <a class="itp-float-bar-item rounded" href="/RiGallery/random" title="随机">
+  <a class="itp-float-bar-item rounded itp-nav-item itp-nav-idx-3" href="/RiGallery/grid-all" title="时间线">
     
-    <iconpark-icon class="navicon" name="pic"></iconpark-icon>
+    <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
+    
+  </a>
+  
+  
+  <a class="itp-float-bar-item rounded itp-nav-more" id="itp_nav_more" href="javascript:void(0)" title="More" aria-label="More">
+    
+    <iconpark-icon class="navicon" name="all-application"></iconpark-icon>
     
   </a>
   
@@ -252,6 +260,110 @@
   <div class="itp-float-layer-bg layer-bg-nodisplay" id="close_layer"></div>
 </div>
 
+<div class="itp-nav-sheet" id="itp_nav_sheet" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="itp-nav-sheet-handle"></div>
+  <div class="itp-nav-sheet-grid">
+    
+    <a class="itp-nav-sheet-item" href="/RiGallery/grid-all">
+      <iconpark-icon class="navicon" name="grid-nine"></iconpark-icon>
+      <span>时间线</span>
+    </a>
+    
+  </div>
+</div>
+<div class="itp-nav-sheet-bg" id="itp_nav_sheet_bg"></div>
+<style>
+  /* the SCSS .itp-float-bar .itp-float-bar-item rule is 2-class specificity,
+     so we have to match it here or `display: inline-flex` wins on desktop */
+  .itp-float-bar .itp-nav-more { display: none; }
+  .itp-nav-sheet, .itp-nav-sheet-bg { display: none; }
+  @media (max-width: 768px) {
+    /* hide overflow nav items in the floatbar; sheet shows them all */
+    .itp-float-bar .itp-nav-item.itp-nav-idx-3,
+    .itp-float-bar .itp-nav-item.itp-nav-idx-4,
+    .itp-float-bar .itp-nav-item.itp-nav-idx-5,
+    .itp-float-bar .itp-nav-item.itp-nav-idx-6,
+    .itp-float-bar .itp-nav-item.itp-nav-idx-7,
+    .itp-float-bar .itp-nav-item.itp-nav-idx-8,
+    .itp-float-bar .itp-nav-item.itp-nav-idx-9 { display: none; }
+    .itp-float-bar .itp-nav-more { display: flex; }
+  }
+  .itp-nav-sheet-bg {
+    position: fixed; inset: 0;
+    background: rgba(20,20,20,.35);
+    z-index: 1100;
+    opacity: 0; transition: opacity .18s ease-out;
+  }
+  .itp-nav-sheet-bg.show { display: block; opacity: 1; }
+  .itp-nav-sheet {
+    position: fixed; left: 0; right: 0;
+    bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+    z-index: 1101;
+    background: var(--surface, #fff);
+    border-top-left-radius: var(--radius-lg, 14px);
+    border-top-right-radius: var(--radius-lg, 14px);
+    box-shadow: 0 -8px 28px rgba(0,0,0,.18);
+    padding: 8px 16px 20px;
+    transform: translateY(100%);
+    transition: transform .22s cubic-bezier(.2,.8,.2,1);
+  }
+  .itp-nav-sheet.show { display: block; transform: translateY(0); }
+  .itp-nav-sheet-handle {
+    width: 40px; height: 4px; border-radius: 2px;
+    background: rgba(120,120,120,.35);
+    margin: 6px auto 14px;
+  }
+  .itp-nav-sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 8px;
+  }
+  .itp-nav-sheet-item {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 8px 4px;
+    color: var(--on-surface, #2f3a2f);
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: background-color .15s ease;
+  }
+  .itp-nav-sheet-item:active { background: rgba(120,120,120,.12); }
+  .itp-nav-sheet-item iconpark-icon { font-size: 24px; }
+  @media (prefers-color-scheme: dark) {
+    .itp-nav-sheet { background: #1d2326; }
+    .itp-nav-sheet-item { color: #e6e0d0; }
+    .itp-nav-sheet-bg { background: rgba(0,0,0,.55); }
+  }
+</style>
+<script>
+  (function () {
+    var btn = document.getElementById('itp_nav_more');
+    var sheet = document.getElementById('itp_nav_sheet');
+    var bg = document.getElementById('itp_nav_sheet_bg');
+    if (!btn || !sheet || !bg) return;
+    function open() {
+      sheet.style.display = 'block'; bg.style.display = 'block';
+      // next frame so the transition runs
+      requestAnimationFrame(function () { sheet.classList.add('show'); bg.classList.add('show'); });
+      sheet.setAttribute('aria-hidden', 'false');
+    }
+    function close() {
+      sheet.classList.remove('show'); bg.classList.remove('show');
+      sheet.setAttribute('aria-hidden', 'true');
+      setTimeout(function () { sheet.style.display = 'none'; bg.style.display = 'none'; }, 220);
+    }
+    btn.addEventListener('click', function (e) { e.preventDefault(); sheet.classList.contains('show') ? close() : open(); });
+    bg.addEventListener('click', close);
+    sheet.querySelectorAll('.itp-nav-sheet-item').forEach(function (a) {
+      a.addEventListener('click', function () { close(); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sheet.classList.contains('show')) close();
+    });
+  })();
+</script>
+
+
 
 <style>
   .navicon {
@@ -261,14 +373,15 @@
   }
 </style>
   <!-- Main Content -->
-  <script src="js/html2canvas.js"></script>
+  <script src="js/html2canvas.min.js" defer></script>
+<script src="js/mini-live-photo.js"></script>
 <section class="pjax-area">
   <div class="content-area post-album default-content-area">
     <div class="grid grid-cols-3">
       <div class="default-pic gap-2 wrapper">
         <div id="all-pic" class="pic-area">
-          <div class="pic-item" />
-          <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230613wukesong.JPG" />
+          <div id="pic-g" class="pic-item" />
+          <img id="imgbox" class="pic-box" src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000201.webp" />
         </div>
         <div id="exif-wrapper" class="pic-wrapper">
     <div class="exif-left" style="display: flex; flex-direction: column; justify-content: center;">
@@ -350,7 +463,7 @@
     @media (max-width: 768px) {
         .pic-wrapper {
             padding: 4px 0px;
-        }        
+        }
 
         #exif-param {
             font-size: .5rem;
@@ -369,18 +482,22 @@
             font-size: .5rem;
         }
 
-        #exif-maker-logo {
-        }
-
         #exif-text {
             max-width: calc(30vw);
         }
     }
 
-    .apple-logo, 
-    .ricoh-logo, 
-    .fujifilm-logo {
+    .apple-logo,
+    .ricoh-logo,
+    .fujifilm-logo,
+    .om-system-logo,
+    .hasselblad-logo,
+    .olympus-logo {
         height: 40px;
+    }
+
+    .nikon-logo {
+        height: 50px;
     }
 
     .sony-logo,
@@ -388,10 +505,18 @@
         width: 80px;
     }
 
+    .dji-logo {
+        width: 60px;
+    }
+
     @media (max-width: 768px) {
-        .apple-logo, 
-        .ricoh-logo, 
-        .fujifilm-logo {
+        .apple-logo,
+        .ricoh-logo,
+        .nikon-logo,
+        .hasselblad-logo,
+        .fujifilm-logo,
+        .om-system-logo,
+        .olympus-logo {
             height: 30px;
         }
 
@@ -408,9 +533,48 @@
             border-width: thin;
             background-color: white;
             border-color: white;
-        }        
+        }
     }
-</style>  
+
+.mlp-wrap {
+    overflow: hidden;
+    border-radius: inherit;    /* 如果父级有圆角，继承一下更自然 */
+}
+
+.mlp-wrap, [data-livephoto] { position: relative; overflow: hidden; border-radius: inherit; }
+
+/* 初始隐藏视频，启用硬件合成避免闪烁 */
+.mlp-wrap .mlp-video, [data-livephoto] .mlp-video{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  opacity:0; transition:opacity .18s ease, transform .25s ease;
+  will-change: opacity, transform; pointer-events:none;
+}
+
+/* “首帧就绪”后，允许显示（只把不透明度交给 JS 控） */
+.mlp-wrap.is-prepped .mlp-video,
+[data-livephoto].is-prepped .mlp-video{ opacity:0; }
+
+/* 开始播放时再交叉淡入 */
+.mlp-wrap.is-playing .mlp-video,
+[data-livephoto].is-playing .mlp-video{ opacity:1; }
+
+/* （可选）缩放动画 */
+.mlp-wrap.is-zoom .mlp-video,
+[data-livephoto].is-zoom .mlp-video{ transform: scale(1.04); }
+
+[data-livephoto].is-playing {
+  -webkit-touch-callout: none;
+  user-select: none;
+  touch-action: none;
+}
+
+/* 禁止浏览器把 img/video 当成可拖拽对象 */
+[data-livephoto] img,
+[data-livephoto] video {
+  -webkit-user-drag: none;
+  user-drag: none; /* 非标准，但部分浏览器支持 */
+}
+</style>
       </div>
       <p id="descbox" class="text-center text-xs hint-text" hidden>  </p>
       <div class="album-list flex gap-2">
@@ -425,14 +589,14 @@
           
           
           
+          
           <a class="album-item lazy" id="0"
-            name="20230613wukesong" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230613wukesong.JPG"
-            desc="The image features two women standing in front of a wall made of white paper, which appears to be a creative display or art installation. One woman is kneeling down, while the other woman is standing behind her. They seem to be admiring the unique artwork or perhaps participating in an interactive experience.
-
-In the scene, there are also two handbags visible, one near the kneeling woman and the other closer to the standing woman. Additionally, there is a cell phone placed on a surface in the background, possibly belonging to one of the women."
-            share="Museum/20230613wukesong.JPG"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F3.2 ISO 200 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:06:13 19:21:48","EXIF ExposureTime":"1/80s","EXIF FNumber":"F3.2","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230613wukesong","path":"Museum/20230613wukesong.JPG","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230613wukesong.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230613wukesong.JPG"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230613wukesong.webp"
+            name="R0000201" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000201.jpeg"
+            desc=" - · - "
+            share="Museum/R0000201.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 640 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2021:12:31 22:31:43","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 640","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0000201","path":"Museum/R0000201.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000201.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000201.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000201.webp"
             aria-label="the photo 0"></a>
           
           
@@ -445,15 +609,16 @@ In the scene, there are also two handbags visible, one near the kneeling woman a
           
           
           
+          
           <a class="album-item lazy" id="1"
-            name="20230630guomei" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230630guomei.jpg"
-            desc="The image depicts a large group of people gathered in a room, with some of them taking pictures of a painting on display. The painting is located in the center of the room, and the people are standing around it, admiring the artwork. 
-
-There are several individuals in the scene, with some standing closer to the painting and others positioned further back. A few people are holding their cell phones, likely capturing photos or recording videos of the painting. In addition to the people and the painting, there are a couple of handbags visible in the room, suggesting that the gathering might be a casual event or exhibition."
-            share="Museum/20230630guomei.jpg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 2500 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:06:30 14:52:34","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230630guomei","path":"Museum/20230630guomei.jpg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230630guomei.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230630guomei.jpg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230630guomei.webp"
+            name="R0000202" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000202.jpeg"
+            desc=" - · - "
+            share="Museum/R0000202.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 800 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2021:12:31 22:33:34","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0000202","path":"Museum/R0000202.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000202.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000202.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000202.webp"
             aria-label="the photo 1"></a>
+          
           
           
           
@@ -467,10 +632,9 @@ There are several individuals in the scene, with some standing closer to the pai
           
           <a class="album-item lazy" id="2"
             name="R0000439" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000439.jpeg"
-            desc="The image features a man and a woman standing in front of a painting in a museum. They are both looking at the artwork, possibly admiring the artist's skill or discussing the piece. The woman is positioned slightly to the left of the man, and they are both facing the same direction, giving the impression that they are sharing a moment of appreciation for the artwork.
-
-In the background, there is a handbag placed on the floor, possibly belonging to one of the visitors. The scene captures the essence of a shared experience in a museum, where people come together to enjoy and learn from art."
+            desc=" - · - "
             share="Museum/R0000439.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F2.8 ISO 800 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2022:03:30 23:57:34","EXIF ExposureTime":"1/80s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0000439","path":"Museum/R0000439.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000439.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000439.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000439.webp"
             aria-label="the photo 2"></a>
@@ -485,10 +649,12 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="3"
             name="R0000451" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000451.jpeg"
-            desc="The image features a spiral staircase with blue railings, and several people are walking up and down the stairs. There are at least nine people visible in the scene, with some of them carrying handbags. The staircase appears to be located in a building, as the people are moving in a coordinated manner. The blue railings add a touch of elegance to the staircase, making it an interesting focal point in the image."
+            desc=" - · - "
             share="Museum/R0000451.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F2.8 ISO 800 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2022:03:31 00:05:38","EXIF ExposureTime":"1/80s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 800","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0000451","path":"Museum/R0000451.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000451.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000451.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000451.webp"
             aria-label="the photo 3"></a>
@@ -503,10 +669,12 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="4"
             name="R0000476 (1)" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000476 (1).jpeg"
-            desc="The image features a woman sitting on a bench in a room, looking at a painting hanging on the wall. She is positioned near the left side of the image, with the bench located in the foreground. The painting is prominently displayed above the woman, capturing her attention as she gazes at it."
+            desc=" - · - "
             share="Museum/R0000476 (1).jpeg"
+            video=""
             extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/40s F2.8 ISO 1600 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2022:03:31 00:19:52","EXIF ExposureTime":"1/40s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 1600","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0000476 (1)","path":"Museum/R0000476 (1).jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000476 (1).webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000476 (1).jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000476 (1).webp"
             aria-label="the photo 4"></a>
@@ -521,10 +689,12 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="5"
             name="R0000476" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000476.jpeg"
-            desc="The image features a woman sitting on a bench in a room, looking at a painting hanging on the wall. She is positioned near the left side of the image, with the bench located in the foreground. The painting is prominently displayed above the woman, capturing her attention as she gazes at it."
+            desc=" - · - "
             share="Museum/R0000476.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/40s F2.8 ISO 1600 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2022:03:31 00:19:52","EXIF ExposureTime":"1/40s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 1600","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0000476","path":"Museum/R0000476.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000476.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0000476.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0000476.webp"
             aria-label="the photo 5"></a>
@@ -539,12 +709,14 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="6"
-            name="R0010605" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0010605.jpeg"
-            desc="The image features a man in a suit standing in a doorway, looking out into a hallway. He appears to be the main subject of the scene. Behind him, there are two other people, one of whom is wearing a tie. They are positioned in the background, slightly to the right of the man in the suit. The hallway seems to be a part of a larger room, possibly a museum or a formal event space."
-            share="Museum/R0010605.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:28 16:01:20","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0010605","path":"Museum/R0010605.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0010605.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0010605.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0010605.webp"
+            name="20230613wukesong" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230613wukesong.JPG"
+            desc=" - · - "
+            share="Museum/20230613wukesong.JPG"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/80s F3.2 ISO 200 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:06:13 19:21:48","EXIF ExposureTime":"1/80s","EXIF FNumber":"F3.2","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230613wukesong","path":"Museum/20230613wukesong.JPG","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230613wukesong.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230613wukesong.JPG"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230613wukesong.webp"
             aria-label="the photo 6"></a>
           
           
@@ -557,12 +729,14 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="7"
-            name="R0011272" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011272.jpeg"
-            desc="The image features a man sitting on a bench in a museum, leaning on it with his hand on his face. He appears to be deep in thought or contemplation. The man is wearing a black shirt and is positioned in front of a large picture frame, which is likely a painting. The setting seems to be a quiet and contemplative atmosphere, with the man taking a moment to reflect or absorb the art around him."
-            share="Museum/R0011272.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 2500 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:22 20:55:48","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0011272","path":"Museum/R0011272.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011272.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011272.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011272.webp"
+            name="20230630guomei" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230630guomei.jpg"
+            desc=" - · - "
+            share="Museum/20230630guomei.jpg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 2500 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:06:30 14:52:34","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"20230630guomei","path":"Museum/20230630guomei.jpg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230630guomei.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/20230630guomei.jpg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/20230630guomei.webp"
             aria-label="the photo 7"></a>
           
           
@@ -575,12 +749,14 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="8"
-            name="R0011477" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011477.jpeg"
-            desc="The image features a couple standing in a courtyard, with their reflections visible in a glass window. The couple appears to be looking at a painting displayed in the window. The scene takes place in front of a building, and the couple is positioned in the center of the courtyard. The glass window adds an artistic touch to the scene, creating a visually interesting and unique atmosphere."
-            share="Museum/R0011477.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 4000 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:23 23:43:15","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 4000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0011477","path":"Museum/R0011477.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011477.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011477.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011477.webp"
+            name="R0011272" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011272.jpeg"
+            desc=" - · - "
+            share="Museum/R0011272.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 2500 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:22 20:55:48","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0011272","path":"Museum/R0011272.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011272.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011272.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011272.webp"
             aria-label="the photo 8"></a>
           
           
@@ -593,14 +769,14 @@ In the background, there is a handbag placed on the floor, possibly belonging to
           
           
           
+          
           <a class="album-item lazy" id="9"
-            name="R0012074" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012074.jpeg"
-            desc="The image features a couple standing in a room, looking at a large painting on the wall. The painting depicts a group of people holding red flags, which seems to be the main focus of their attention. The couple appears to be engaged in a conversation or admiring the artwork together.
-
-In the room, there are also two handbags placed near the couple, possibly belonging to them or other visitors. The overall atmosphere of the scene suggests a shared interest in art and a moment of connection between the two individuals."
-            share="Museum/R0012074.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 3200 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:29 10:52:25","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012074","path":"Museum/R0012074.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012074.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012074.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012074.webp"
+            name="R0011477" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011477.jpeg"
+            desc=" - · - "
+            share="Museum/R0011477.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/200s F2.8 ISO 4000 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:23 23:43:15","EXIF ExposureTime":"1/200s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 4000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0011477","path":"Museum/R0011477.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011477.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0011477.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0011477.webp"
             aria-label="the photo 9"></a>
           
           
@@ -613,14 +789,14 @@ In the room, there are also two handbags placed near the couple, possibly belong
           
           
           
+          
           <a class="album-item lazy" id="10"
-            name="R0012318" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012318.jpeg"
-            desc="The image features a man sitting in a doorway, looking down at the ground. He appears to be in a contemplative or reflective mood. The room has a mirror on the wall, which reflects the man and the surrounding area. 
-
-There are a few other people in the room, but they are not the main focus of the scene. A chair is also visible in the room, positioned near the center of the image."
-            share="Museum/R0012318.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 1000 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:01:01 15:38:58","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 1000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012318","path":"Museum/R0012318.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012318.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012318.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012318.webp"
+            name="R0010605" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0010605.jpeg"
+            desc=" - · - "
+            share="Museum/R0010605.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:28 16:01:20","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0010605","path":"Museum/R0010605.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0010605.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0010605.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0010605.webp"
             aria-label="the photo 10"></a>
           
           
@@ -633,12 +809,14 @@ There are a few other people in the room, but they are not the main focus of the
           
           
           
+          
           <a class="album-item lazy" id="11"
-            name="R0012646" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012646.jpeg"
-            desc="The image features a large spiral staircase with a group of people walking up and down it. There are at least 13 people visible in the scene, with some of them carrying backpacks. The staircase is located in a public area, possibly a mall or a busy building, as the people are moving in a circular pattern. The scene captures the bustling atmosphere of the space, with people going about their day."
-            share="Museum/R0012646.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:01:03 18:34:09","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012646","path":"Museum/R0012646.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012646.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012646.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012646.webp"
+            name="R0012074" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012074.jpeg"
+            desc=" - · - "
+            share="Museum/R0012074.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 3200 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2023:12:29 10:52:25","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 3200","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012074","path":"Museum/R0012074.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012074.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012074.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012074.webp"
             aria-label="the photo 11"></a>
           
           
@@ -651,14 +829,14 @@ There are a few other people in the room, but they are not the main focus of the
           
           
           
+          
           <a class="album-item lazy" id="12"
-            name="R0012996" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012996.jpeg"
-            desc="The image features a man sitting at a desk in a room, surrounded by books and magazines. He appears to be working or studying, possibly in a library or a similar setting. The desk is positioned in front of a window, providing natural light to the room.
-
-There are several books scattered around the room, some on the desk and others placed on shelves or other surfaces. A cup can be seen on the desk, likely for the man to enjoy a beverage while he works. The overall atmosphere of the room suggests a quiet and focused environment for studying or working."
-            share="Museum/R0012996.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 2500 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:02:14 15:43:20","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012996","path":"Museum/R0012996.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012996.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012996.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012996.webp"
+            name="R0012318" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012318.jpeg"
+            desc=" - · - "
+            share="Museum/R0012318.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/100s F2.8 ISO 1000 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:01:01 15:38:58","EXIF ExposureTime":"1/100s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 1000","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012318","path":"Museum/R0012318.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012318.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012318.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012318.webp"
             aria-label="the photo 12"></a>
           
           
@@ -671,12 +849,14 @@ There are several books scattered around the room, some on the desk and others p
           
           
           
+          
           <a class="album-item lazy" id="13"
-            name="R0015325" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015325.jpeg"
-            desc="The image depicts a group of people walking down a dimly lit hallway, with two men holding hands as they walk together. The hallway appears to be empty, with only a few people visible in the scene. The men holding hands are positioned in the center of the image, drawing attention to their close bond. The overall atmosphere of the scene is quiet and intimate, with the dim lighting adding to the sense of mystery."
-            share="Museum/R0015325.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/40s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:29:15","EXIF ExposureTime":"1/40s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015325","path":"Museum/R0015325.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015325.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015325.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015325.webp"
+            name="R0012646" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012646.jpeg"
+            desc=" - · - "
+            share="Museum/R0012646.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/125s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:01:03 18:34:09","EXIF ExposureTime":"1/125s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012646","path":"Museum/R0012646.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012646.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012646.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012646.webp"
             aria-label="the photo 13"></a>
           
           
@@ -689,12 +869,14 @@ There are several books scattered around the room, some on the desk and others p
           
           
           
+          
           <a class="album-item lazy" id="14"
-            name="R0015346" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015346.jpeg"
-            desc="The image depicts a group of people standing in a dimly lit room, with some of them wearing black clothing. One person is in the foreground, walking across the room, while others are scattered throughout the space. The room appears to be a large open area, possibly a warehouse or a similar industrial setting. The people seem to be engaged in a gathering or event, with some of them possibly dancing or socializing."
-            share="Museum/R0015346.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:40:36","EXIF ExposureTime":"1/25s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015346","path":"Museum/R0015346.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015346.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015346.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015346.webp"
+            name="R0012996" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012996.jpeg"
+            desc=" - · - "
+            share="Museum/R0012996.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/160s F2.8 ISO 2500 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:02:14 15:43:20","EXIF ExposureTime":"1/160s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 2500","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0012996","path":"Museum/R0012996.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012996.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0012996.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0012996.webp"
             aria-label="the photo 14"></a>
           
           
@@ -707,12 +889,14 @@ There are several books scattered around the room, some on the desk and others p
           
           
           
+          
           <a class="album-item lazy" id="15"
-            name="R0015359" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015359.jpeg"
-            desc="The image features two women standing next to each other, both holding cell phones and taking pictures. They are positioned in front of a blue wall, which provides a striking backdrop for their photography session. The women appear to be focused on capturing the moment, as they are both actively engaged with their cell phones."
-            share="Museum/R0015359.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F8 ISO 100 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:47:52","EXIF ExposureTime":"1/25s","EXIF FNumber":"F8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 100","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015359","path":"Museum/R0015359.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015359.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015359.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015359.webp"
+            name="R0015325" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015325.jpeg"
+            desc=" - · - "
+            share="Museum/R0015325.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/40s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:29:15","EXIF ExposureTime":"1/40s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015325","path":"Museum/R0015325.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015325.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015325.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015325.webp"
             aria-label="the photo 15"></a>
           
           
@@ -725,12 +909,14 @@ There are several books scattered around the room, some on the desk and others p
           
           
           
+          
           <a class="album-item lazy" id="16"
-            name="R0015372" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015372.jpeg"
-            desc="The image features a man and a woman standing in front of a large painting. They are both looking at the artwork, possibly admiring its details or discussing its meaning. The painting is quite large, covering a significant portion of the wall behind them. The couple appears to be engaged in a conversation or sharing their thoughts about the artwork."
-            share="Museum/R0015372.jpeg"
-            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:52:03","EXIF ExposureTime":"1/25s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015372","path":"Museum/R0015372.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015372.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015372.jpeg"}'
-            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015372.webp"
+            name="R0015346" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015346.jpeg"
+            desc=" - · - "
+            share="Museum/R0015346.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:40:36","EXIF ExposureTime":"1/25s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015346","path":"Museum/R0015346.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015346.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015346.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015346.webp"
             aria-label="the photo 16"></a>
           
           
@@ -743,13 +929,135 @@ There are several books scattered around the room, some on the desk and others p
           
           
           
+          
           <a class="album-item lazy" id="17"
+            name="R0015359" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015359.jpeg"
+            desc=" - · - "
+            share="Museum/R0015359.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F8 ISO 100 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:47:52","EXIF ExposureTime":"1/25s","EXIF FNumber":"F8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 100","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015359","path":"Museum/R0015359.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015359.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015359.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015359.webp"
+            aria-label="the photo 17"></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a class="album-item lazy" id="18"
+            name="R0015372" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015372.jpeg"
+            desc=" - · - "
+            share="Museum/R0015372.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/25s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:52:03","EXIF ExposureTime":"1/25s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015372","path":"Museum/R0015372.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015372.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015372.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015372.webp"
+            aria-label="the photo 18"></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a class="album-item lazy" id="19"
             name="R0015377" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015377.jpeg"
-            desc="The image features a person standing in a dark room, facing a wall with a painting on it. The person is positioned in the center of the frame, with their silhouette clearly visible against the background. The painting is located towards the right side of the wall, drawing attention to the person in the room. The overall scene creates a sense of solitude and contemplation."
+            desc=" - · - "
             share="Museum/R0015377.jpeg"
+            video=""
             extra='{"desc":null,"dir":"Museum","exif":"RICOH IMAGING COMPANY, LTD.   RICOH GR III        1/30s F2.8 ISO 6400 18.3mm ","exif_data":{"EXIF DateTimeOriginal":"2024:06:01 16:52:22","EXIF ExposureTime":"1/30s","EXIF FNumber":"F2.8","EXIF FocalLength":"18.3mm","EXIF ISOSpeedRatings":"ISO 6400","Image Make":"RICOH IMAGING COMPANY, LTD.  ","Image Model":"RICOH GR III       "},"location":[],"name":"R0015377","path":"Museum/R0015377.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015377.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/R0015377.jpeg"}'
             href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/R0015377.webp"
-            aria-label="the photo 17"></a>
+            aria-label="the photo 19"></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a class="album-item lazy" id="20"
+            name="IMG_2059" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2059.jpeg"
+            desc=" - · - "
+            share="Museum/IMG_2059.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"Canon Canon EOS 80D 1/160s F11 ISO 200 64mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2024:07:13 00:07:28","EXIF ExposureTime":"1/160s","EXIF FNumber":"F11","EXIF FocalLength":"64mm","EXIF ISOSpeedRatings":"ISO 200","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"IMG_2059","path":"Museum/IMG_2059.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2059.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2059.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2059.webp"
+            aria-label="the photo 20"></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a class="album-item lazy" id="21"
+            name="IMG_2680" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2680.jpeg"
+            desc=" - · - "
+            share="Museum/IMG_2680.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"Canon Canon EOS 80D 1/60s F5 ISO 1250 35mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2024:07:21 18:24:16","EXIF ExposureTime":"1/60s","EXIF FNumber":"F5","EXIF FocalLength":"35mm","EXIF ISOSpeedRatings":"ISO 1250","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"IMG_2680","path":"Museum/IMG_2680.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2680.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2680.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2680.webp"
+            aria-label="the photo 21"></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a class="album-item lazy" id="22"
+            name="IMG_2761" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2761.jpeg"
+            desc=" - · - "
+            share="Museum/IMG_2761.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"Canon Canon EOS 80D 1/60s F3.5 ISO 500 18mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2024:07:21 21:43:10","EXIF ExposureTime":"1/60s","EXIF FNumber":"F3.5","EXIF FocalLength":"18mm","EXIF ISOSpeedRatings":"ISO 500","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"IMG_2761","path":"Museum/IMG_2761.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2761.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2761.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2761.webp"
+            aria-label="the photo 22"></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a class="album-item lazy" id="23"
+            name="IMG_2774" rel="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2774.jpeg"
+            desc=" - · - "
+            share="Museum/IMG_2774.jpeg"
+            video=""
+            extra='{"desc":null,"dir":"Museum","exif":"Canon Canon EOS 80D 1/20s F7.1 ISO 1600 74mm EF-S18-135mm f/3.5-5.6 IS USM ","exif_data":{"EXIF DateTimeOriginal":"2024:07:21 21:55:28","EXIF ExposureTime":"1/20s","EXIF FNumber":"F7.1","EXIF FocalLength":"74mm","EXIF ISOSpeedRatings":"ISO 1600","EXIF LensModel":"EF-S18-135mm f/3.5-5.6 IS USM","Image Make":"Canon","Image Model":"Canon EOS 80D"},"location":[],"name":"IMG_2774","path":"Museum/IMG_2774.jpeg","thum":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2774.webp","url":"https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main/Museum/IMG_2774.jpeg"}'
+            href="javascript:void(0);" onClick="changeimg(event)" data-src="https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail//Museum/IMG_2774.webp"
+            aria-label="the photo 23"></a>
           
       </div>
       <div class="text-center text-xs pt-2 hint-text"> </div>
@@ -766,12 +1074,12 @@ There are several books scattered around the room, some on the desk and others p
           </div>
           <div class="album-share album-tool">
             <iconpark-icon name="save"></iconpark-icon><a id="editor" href="javascript:void(0)"> Editor </a>
-          </div>     
+          </div>
           <div class="album-share album-tool">
             <iconpark-icon name="grid-nine"></iconpark-icon><a id="grid" href="javascript:void(0)"> Grid </a>
-          </div>        
-        </div>        
-        <div class="album-title">在文馆IN Museums</div>
+          </div>
+        </div>
+        <div class="album-title">在文馆IN Museum</div>
         <span class="album-subtitle">
           
           
@@ -795,7 +1103,7 @@ There are several books scattered around the room, some on the desk and others p
   
       </div>
       <script>
-        var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
+        var imageBox = document.getElementById("imgbox");
         var descBox = $("#descbox");
         var wrapper = $("#exif-wrapper");
         var exifParam = $("#exif-param");
@@ -808,7 +1116,7 @@ There are several books scattered around the room, some on the desk and others p
         var normalData = $("#no-exif-data");
         var name = getParam('name');
         var editor = $("#editor");
-        imgno = 0; // 进入页面时，设定初始的图片编号为0 // 定义新变量时不使用 var 则为全局变量、
+        imgno = 0;
         imgLink = imageBox.src;
         function changeExifData(v) {
           if (Object.keys(v.exif_data).length === 0) {
@@ -828,19 +1136,32 @@ There are several books scattered around the room, some on the desk and others p
           name = target.getAttribute('name');
           var desc = target.getAttribute('desc');
           var thum = target.getAttribute('data-src');
+          var video = target.getAttribute('video');
           var v = JSON.parse(target.getAttribute('extra'));
           imageBox.src = thum;
           imageBox.classList.add('blur');
-          // load the original img.
           const highResImage = new Image();
           highResImage.src = imgLink;
-            highResImage.onload = function() {
-              imageBox.src = highResImage.src;
-              imageBox.classList.remove('blur');
+          highResImage.onload = function() {
+            imageBox.src = highResImage.src;
+            imageBox.classList.remove('blur');
+            // preload next image into browser cache
+            var nextIdx = Number(imgno) + 1;
+            if (nextIdx < len) {
+              var nextEl = document.getElementById(nextIdx);
+              if (nextEl) {
+                var prefetch = new Image();
+                prefetch.src = nextEl.getAttribute('rel');
+              }
+            }
           };
           imageBox.setAttribute("share", target.getAttribute('share'));
-          var imageFancy = imageBox.parentElement; // imageBox 是放置大图片的图框
+          var imageFancy = imageBox.parentElement;
           imageFancy.setAttribute("href", imgLink);
+
+          var picg = document.getElementById('pic-g');
+          attachLivePhoto(picg, false, '');
+          attachLivePhoto(picg, video !== '', video);
           var fancyBoxImage = document.getElementsByClassName("fancybox__image")[0];
           if (fancyBoxImage !== undefined) {
             fancyBoxImage.src = imgLink;
@@ -861,16 +1182,29 @@ There are several books scattered around the room, some on the desk and others p
           var value = $(`[name='${name}']`)[0];
           changeImageWith(value)
         };
-        const len = +'18'
+        const len = +'24'
         if (name !== "" && name !== null && name !== 'null') {
           changeImageWithName(name)
         } else {
           var value = $(`#0`)[0];
           name = value.getAttribute('name');
+          imgLink = value.getAttribute('rel');
           imageBox.title = value.getAttribute('desc');
           var v = JSON.parse(value.getAttribute('extra'));
           changeExifData(v);
           imageBox.setAttribute("share", value.getAttribute('share'));
+          // progressively load full-res for initial image without blur flash
+          const initHighRes = new Image();
+          initHighRes.src = imgLink;
+          initHighRes.onload = function() {
+            imageBox.src = initHighRes.src;
+            // preload second image
+            var nextEl = document.getElementById(1);
+            if (nextEl) {
+              var prefetch = new Image();
+              prefetch.src = nextEl.getAttribute('rel');
+            }
+          };
         }
 
         $('#download').click(function () {
@@ -880,18 +1214,18 @@ There are several books scattered around the room, some on the desk and others p
             allowTaint: true,
             scrollX: 0,
             scrollY: 0,
-          }).then(function (canvas) {                  
+          }).then(function (canvas) {
             simulateDownloadImageClick(canvas.toDataURL('image/png'),  name + '.png');
           });
-        });   
+        });
         editor.click(function () {
           window.open('https://rivers-wqj.github.io/RiGallery/editor?file=' + encodeURIComponent(imgLink));
-        })     
+        })
         // key
         window.onkeydown = function album_hotkey() {
           //[键盘快捷键] 左箭头 上一张
           if (event.keyCode === 37) {
-            imgno = imgno - 1; // 设置图片编号-1
+            imgno = imgno - 1;
             if (imgno < 0) {
               imgno = 0;
             }
@@ -899,7 +1233,7 @@ There are several books scattered around the room, some on the desk and others p
           };
           //[键盘快捷键] 右箭头 下一张
           if (event.keyCode === 39) {
-            imgcount = len - 1 //获取图片数量
+            imgcount = len - 1
             imgno = Number(imgno) + 1;
             if (imgno > imgcount) {
               imgno = imgcount
@@ -915,7 +1249,7 @@ There are several books scattered around the room, some on the desk and others p
           };
         };
         $("#share").on('click', function() {
-          var imageBox = document.getElementById("imgbox"); 
+          var imageBox = document.getElementById("imgbox");
           copyToClipboard('https://rivers-wqj.github.io/RiGallery/' + "photo?name=" + imageBox.getAttribute('share'));
         });
         $("#grid").on('click', function() {
@@ -933,7 +1267,7 @@ There are several books scattered around the room, some on the desk and others p
 
         .fullscreen-info {
           grid-column: span 3 / span 3;
-        }        
+        }
 
         .album-comment {
           max-width: 800px;
@@ -1049,6 +1383,10 @@ There are several books scattered around the room, some on the desk and others p
           .wrapper {
             padding: 8px;
           }
+
+          iframe {
+            max-width: 100%;
+          }
         }
 
         @media (min-width: 769px) {
@@ -1121,13 +1459,14 @@ There are several books scattered around the room, some on the desk and others p
             border: 0.8px solid white;
           }
         }
+
       </style>
 </section>
   <!-- Footer -->
   <!-- Footer -->
 <footer class="itp-footer text-center">
   <section class="footer-info">
-    Rivers‘ Gallery &copy; 2017 - 2024
+    Rivers‘ Gallery &copy; 2017 - 2026
     
     
     
@@ -1153,7 +1492,7 @@ There are several books scattered around the room, some on the desk and others p
 
 <!-- busuanzi -->
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
 
 <!-- highlightjs -->
 
