@@ -1,7 +1,14 @@
-在文馆IN Museum:
-  url: Museum
+# --- 线上已有的旧相册 + 你本地修改后的相册 ---
+
+在文馆IN Museums:
+  url: In Museums
   date: 2022-12-12
-  cover: Museum/R0011272.jpeg
+  cover: In Museums/R0011272.jpeg
+
+在公园IN Parks:
+  url: In Parks
+  date: 2024-02-14
+  cover: In Parks/cover.jpg
 
 文字Writing:
   url: Writing
@@ -13,50 +20,70 @@
   date: 2023-11-01
   cover: Bicycle/R0012732.jpeg
 
+爱人Couple:
+  url: Couple
+  date: 2021-01-01
+  cover: Couple/cover.jpg
+
 火车IN CRT109:
-  url: CRT109
+  url: CR-T109
   date: 2023-01-11
-  cover: CRT109/20230111T109-8.JPG
+  cover: CR-T109/20230111T109-8.JPG
 
 火车IN CRT145:
-  url: CRT145
+  url: CR-T145
   date: 2023-04-28
-  cover: CRT145/20230428T145-1.JPG
+  cover: CR-T145/20230428T145-1.JPG
 
-格拉纳达街头Granada-ST:
-  url: Granada-ST
-  date: 2023-10-4
-  cover: Granada-ST/R0010737.jpeg
+瑞士街头Switzerland-ST:
+  url: Switzerland
+  date: 2024-03-27
+  cover: Switzerland/cover.jpg
+
+葡萄牙街头Portugal-ST:
+  url: Portugal
+  date: 2024-02-11
+  cover: Portugal/cover.jpg
 
 巴黎街头Paris-ST:
   url: Paris-ST
   date: 2023-12-21
   cover: Paris-ST/R0011197.jpeg
 
+意大利街头Italy-ST:
+  url: Italy
+  date: 2024-01-01
+  cover: Italy/R0012276.jpeg
+
+冰岛Iceland:
+  url: Iceland
+  date: 2024-05-30
+  cover: Iceland/cover.jpg
+
+格拉纳达街头Granada-ST:
+  url: Granada-ST
+  date: 2023-10-04
+  cover: Granada-ST/R0010737.jpeg
+
 北京街头Peking-ST:
   url: Peking-ST
   date: 2020-09-14
   cover: Peking-ST/20230625yuetanpark.jpg
-  
+
 北京印象Peking-City:
   url: Peking-City
   date: 2022-10-01
   cover: Peking-City/IMG_4317.5l08gas8f6k0.webp
 
-西班牙Spain-Parade:
-  url: Spain-Parade
+西班牙🇵🇸游行:
+  url: Spain-🇵🇸游行
   date: 2023-10-29
-  cover: Spain-Parade/8FB9C986-6BCA-4A4C-AEFB-11642B4E826F.jpeg
+  cover: Spain-🇵🇸游行/cover.jpg
 
 格拉纳达Granada-City:
   url: Granada-City
-  date: 2023-10-4
+  date: 2023-10-04
   cover: Granada-City/4DDDE902-08A2-49BB-94C5-D62A4F598DE7_1_105_c.jpeg
-
-意大利Italy:
-  url: Italy
-  date: 2024-01-01
-  cover: Italy/R0012276.jpeg
 
 自画像Self-Portraits:
   url: SELF-PORTRAITS
@@ -64,15 +91,61 @@
   cover: SELF-PORTRAITS/R0011915.jpeg
 
 小渔村Hometown:
-  url: Hometown
+  url: Home Forever
   date: 1997-06-16
-  cover: Hometown/IMG_0319.jpeg
+  cover: Home Forever/IMG_0319.jpeg
+
+苏州园林Suzhou Garden:
+  url: Suzhou Garden
+  date: 2020-01-01
+  cover: Suzhou Garden/cover.jpg
+
+海南HaiNan:
+  url: HaiNan
+  date: 2025-01-05
+  cover: HaiNan/cover.jpg
+
+废弃The Abandoned:
+  url: The Abandoned
+  date: 2020-01-01
+  cover: The Abandoned/cover.jpg
+
+建设者Laborer:
+  url: Laborer
+  date: 2020-01-01
+  cover: Laborer/cover.jpg
+
+小孩Kids:
+  url: Kids
+  date: 2020-01-01
+  cover: Kids/cover.jpg
+
+公交上On Public Transportation:
+  url: On Public Transportation
+  date: 2020-01-01
+  cover: On Public Transportation/cover.jpg
+
+风花雪月Wind&Rain:
+  url: Wind&Rain
+  date: 2020-01-01
+  cover: Wind&Rain/cover.jpg
 
 北大校园PKU:
   url: Peking-Campus
   date: 2023-03-26
   cover: Peking-Campus/R0002987.299hazb9cy4g.webp
 
+UK:
+  url: UK
+  date: 2021-12-12
+  cover: UK/cover.jpg
+
+日落Sunset:
+  url: Sunset
+  date: 2020-01-01
+  cover: Sunset/cover.jpg
+
+# --- 你要新增的相册 ---
 胡志明Saigon:
   url: HoChiMinh
   date: 2026-04-28
