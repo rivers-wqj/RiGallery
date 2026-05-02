@@ -57,6 +57,8 @@ jobs:
     - name: Generate Doc
       run: |
         echo $BASE_URL
+        mkdir -p ./gallery/Museum
+        cp -r "./gallery/In Museums/." "./gallery/Museum/"
         python build.py
         cat new_config.yml
     - name: Install Dependencies & Build
