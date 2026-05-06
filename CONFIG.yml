@@ -17,16 +17,16 @@ thumbnail_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@thumbnail/
 base_url: https://cdn.jsdelivr.net/gh/rivers-wqj/RiGallery@main
 nav:
   地图:
-    link: /location
+    link: /RiGallery/location
     icon: local-two
   时间线:
-    link: /grid-lanes
+    link: /RiGallery/grid-lanes
     icon: grid-nine
   随机:
-    link: /random
+    link: /RiGallery/random
     icon: pic
   动物:
-    link: /animals
+    link: /RiGallery/animals
     icon: cat
   状态监控:
     link: /RiGallery/status
