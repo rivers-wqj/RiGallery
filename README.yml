@@ -1,8 +1,3 @@
-BUSAN:
-  url: BUSAN
-  date: "2025-10-20"
-  style: fullscreen
-  cover: BUSAN/8D059D6F-9673-41E3-98ED-5DEC54143F3F.webp
 在文馆IN Museum:
   url: Museum
   date: "2022-12-12"
@@ -123,3 +118,8 @@ UK:
   date: "2025-01-09"
   style: fullscreen
   cover: Phuket/02138D21-515D-411B-AB3D-7BE00DE7885F.webp
+釜山BUSAN:
+  url: BUSAN
+  date: "2025-10-20"
+  style: fullscreen
+  cover: BUSAN/8D059D6F-9673-41E3-98ED-5DEC54143F3F.webp
