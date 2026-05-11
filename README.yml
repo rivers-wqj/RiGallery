@@ -114,12 +114,12 @@ UK:
   date: "2020-01-01"
   style: fullscreen
   cover: Sunset/IMG_3307.JPG
-Phuket:
-  url: Phuket
-  date: "2025-01-09"
-  style: fullscreen
-  cover: Phuket/02138D21-515D-411B-AB3D-7BE00DE7885F.webp
 胡志明Saigon:
   url: HoChiMinh
   date: "2026-04-28"
   cover: HoChiMinh/R0017450.webp
+普吉岛Phuket:
+  url: Phuket
+  date: "2025-01-09"
+  style: fullscreen
+  cover: Phuket/02138D21-515D-411B-AB3D-7BE00DE7885F.webp
